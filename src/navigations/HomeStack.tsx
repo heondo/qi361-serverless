@@ -1,16 +1,13 @@
 import * as React from 'react'
-import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
-import {SafeAreaProvider} from 'react-native-safe-area-context'
 
 import {Detail} from '../screens/Detail'
-import {Settings} from '../screens/Settings'
 import {PointsList} from '../screens/PointsList'
 import {Home} from '../screens/Home'
+import {MainStackParamList} from '../types/navigation'
 
-const Stack = createStackNavigator()
+const Stack = createStackNavigator<MainStackParamList>()
 
-// App
 export function HomeStackNavigator() {
   return (
     <Stack.Navigator

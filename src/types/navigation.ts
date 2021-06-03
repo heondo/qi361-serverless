@@ -1,15 +1,17 @@
-// import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs'
+// import {BottomStackNavigationProp} from '@react-navigation/bottom-Stacks'
 // import {StackNavigationProp} from '@react-navigation/stack'
 import {NavigatorScreenParams} from '@react-navigation/native'
 
-export type RootStackParamList = {
-  Main: NavigatorScreenParams<MainTabParamList>
-  Settings: undefined
-  PointsList: {
-    id: string
-  }
+export type RootTabParamList = {
+  Main: NavigatorScreenParams<MainStackParamList>
+  Settings: NavigatorScreenParams<SettingsStackParamList>
+}
+
+export type MainStackParamList = {
+  Home: undefined
+  PointsList: {id: string}
   Detail: {
-    item: {
+    character: {
       name: string
       home: string
       species: string
@@ -17,7 +19,6 @@ export type RootStackParamList = {
   }
 }
 
-export type MainTabParamList = {
-  Home: undefined
-  Profile: undefined
+export type SettingsStackParamList = {
+  Settings: undefined
 }
