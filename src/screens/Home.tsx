@@ -1,38 +1,29 @@
 import React from 'react'
 import {FlatList} from 'react-native'
 import {StackNavigationProp} from '@react-navigation/stack'
-import {ListItem, Theme} from 'react-native-elements'
-import {ThemeProvider} from 'styled-components'
+import {ListItem, ThemeProvider} from 'react-native-elements'
+import {useColorScheme} from 'react-native-appearance'
 
 import {RootStackParamList} from '../types/navigation'
 import {TouchableOpacity} from '../components/atoms/button'
 
 import GROUP_DATA, {MeridianDataType} from '../data/groupData'
+import {themes} from '../constants/theme'
 
 type MainScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Main'>
 type Props = {
   navigation: MainScreenNavigationProp
 }
 
-const theme: Theme = {
-  Button: {
-    raised: true,
-  },
-  ListItemTitle: {
-    style: {
-      color: 'white',
-    },
-  },
-}
-
 export function Home(props: Props) {
   const {navigation} = props
+  let colorScheme = useColorScheme()
 
-  const keyExtractor = item => item.meridianID
+  const keyExtractor = (item: any) => item.meridianID
 
   const renderItem = ({item}: {item: MeridianDataType}) => (
-    <ThemeProvider theme={theme}>
-      <ListItem bottomDivider containerStyle={{backgroundColor: '#23272e'}}>
+    <ThemeProvider useDark={colorScheme === 'dark'} theme={themes[colorScheme]}>
+      <ListItem bottomDivider>
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('PointsList', {id: item.meridianID})
