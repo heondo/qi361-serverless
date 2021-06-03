@@ -1,8 +1,8 @@
 import React from 'react'
-
 import {StackNavigationProp} from '@react-navigation/stack'
 import {RouteProp} from '@react-navigation/core'
 import {Button} from 'react-native-elements'
+
 import {RootStackParamList} from '../types/navigation'
 import {Container} from '../components/atoms/layout'
 

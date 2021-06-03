@@ -1,8 +1,9 @@
 import React from 'react'
 import {Button} from 'react-native-elements'
+import {StackNavigationProp} from '@react-navigation/stack'
+
 import {Container} from '../components/atoms'
 import {RootStackParamList} from '../types/navigation'
-import {StackNavigationProp} from '@react-navigation/stack'
 
 type ProfileScreenNavigationProp = StackNavigationProp<
   RootStackParamList,

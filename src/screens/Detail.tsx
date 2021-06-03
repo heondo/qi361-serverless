@@ -2,6 +2,7 @@ import React from 'react'
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native'
 import {StackNavigationProp} from '@react-navigation/stack'
 import {RouteProp} from '@react-navigation/core'
+
 import {RootStackParamList} from '../types/navigation'
 
 type DetailScreenRouteProp = RouteProp<RootStackParamList, 'Detail'>

@@ -1,28 +1,41 @@
 import React from 'react'
-
+import {FlatList} from 'react-native'
 import {StackNavigationProp} from '@react-navigation/stack'
-// import {RouteProp} from '@react-navigation/core'
+import {ListItem, Avatar, Button} from 'react-native-elements'
+
 import {RootStackParamList} from '../types/navigation'
 import {Container} from '../components/atoms/layout'
-import {PrimaryButton} from '../components/atoms/button'
+import {PrimaryButton, TouchableOpacity} from '../components/atoms/button'
 
-// type MainScreenRouteProp = RouteProp<RootStackParamList, 'Main'>
+import GROUP_DATA, {MeridianDataType} from '../data/groupData'
+
 type MainScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Main'>
 type Props = {
-  // route: MainScreenRouteProp
   navigation: MainScreenNavigationProp
 }
 
 export function Home(props: Props) {
   const {navigation} = props
+
+  const keyExtractor = item => item.meridianID
+
+  const renderItem = ({item}: {item: MeridianDataType}) => (
+    <ListItem bottomDivider>
+      <TouchableOpacity>
+        <ListItem.Content>
+          <ListItem.Title>{item.english}</ListItem.Title>
+          <ListItem.Subtitle>{item.english}</ListItem.Subtitle>
+        </ListItem.Content>
+      </TouchableOpacity>
+      <ListItem.Chevron />
+    </ListItem>
+  )
+
   return (
-    <Container>
-      <PrimaryButton
-        title="View Point Group"
-        onPress={() => {
-          navigation.navigate('PointsList', {id: 'hello'})
-        }}
-      />
-    </Container>
+    <FlatList
+      keyExtractor={keyExtractor}
+      data={GROUP_DATA}
+      renderItem={renderItem}
+    />
   )
 }
