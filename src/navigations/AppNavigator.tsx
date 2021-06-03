@@ -8,10 +8,10 @@ import {Detail} from '../screens/Detail'
 import {Settings} from '../screens/Settings'
 import {Profile} from '../screens/Profile'
 
-import {RootStackParamList, HomeTabParamList} from '../types/navigation'
+import {RootStackParamList, MainTabParamList} from '../types/navigation'
 
 const Stack = createStackNavigator<RootStackParamList>()
-const Tab = createBottomTabNavigator<HomeTabParamList>()
+const Tab = createBottomTabNavigator<MainTabParamList>()
 
 // Tab bar component
 function MainTabNavigator() {
@@ -34,7 +34,7 @@ export function MainStackNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Home"
+        initialRouteName="Main"
         screenOptions={{
           gestureEnabled: true,
           headerStyle: {
@@ -48,7 +48,7 @@ export function MainStackNavigator() {
         }}
         headerMode="float">
         <Stack.Screen
-          name="Home"
+          name="Main"
           component={MainTabNavigator}
           options={({route}) => ({
             title: route.name,
