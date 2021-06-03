@@ -17,7 +17,7 @@ export const themes: {
   },
   dark: {
     ...base,
-    colors: {primary: 'gray'},
+    colors: {primary: colors.gray['700']},
     ListItemSubtitle: {
       style: {
         color: colors.white,
@@ -25,7 +25,7 @@ export const themes: {
     },
     ListItem: {
       containerStyle: {
-        backgroundColor: colors.gray['700'],
+        backgroundColor: colors.gray['800'],
       },
     },
   },
