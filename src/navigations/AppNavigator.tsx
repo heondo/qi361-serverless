@@ -8,9 +8,12 @@ import {Detail} from '../screens/Detail'
 import {Settings} from '../screens/Settings'
 import {Profile} from '../screens/Profile'
 
-const Stack = createStackNavigator()
-const Tab = createBottomTabNavigator()
+import {RootStackParamList, HomeTabParamList} from '../types/navigation'
 
+const Stack = createStackNavigator<RootStackParamList>()
+const Tab = createBottomTabNavigator<HomeTabParamList>()
+
+// Tab bar component
 function MainTabNavigator() {
   return (
     <Tab.Navigator
@@ -26,6 +29,7 @@ function MainTabNavigator() {
   )
 }
 
+// App
 export function MainStackNavigator() {
   return (
     <NavigationContainer>
@@ -34,12 +38,12 @@ export function MainStackNavigator() {
         screenOptions={{
           gestureEnabled: true,
           headerStyle: {
-            backgroundColor: '#101010',
+            backgroundColor: 'lightgrey',
           },
           headerTitleStyle: {
             fontWeight: 'bold',
           },
-          headerTintColor: '#ffd700',
+          headerTintColor: 'black',
           headerBackTitleVisible: false,
         }}
         headerMode="float">
