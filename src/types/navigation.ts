@@ -9,7 +9,7 @@ export type RootTabParamList = {
 
 export type MainStackParamList = {
   Home: undefined
-  PointsList: {id: string}
+  PointsList: {id: string; header: string}
   Detail: {
     character: {
       name: string

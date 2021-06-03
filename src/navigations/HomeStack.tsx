@@ -31,7 +31,13 @@ export function HomeStackNavigator() {
           title: route.name,
         })}
       />
-      <Stack.Screen name="PointsList" component={PointsList} />
+      <Stack.Screen
+        name="PointsList"
+        component={PointsList}
+        options={({route}) => ({
+          title: `${route.params.id}`,
+        })}
+      />
 
       <Stack.Screen
         name="Detail"

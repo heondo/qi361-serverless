@@ -33,6 +33,7 @@ export function Home({navigation}: Props) {
               screen: 'PointsList',
               params: {
                 id: item.meridianID,
+                header: item.english,
               },
             })
           }}>
