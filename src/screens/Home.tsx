@@ -7,7 +7,7 @@ const character = {
   species: 'human',
 }
 
-const Home = props => {
+export function Home(props) {
   const {navigation} = props
   return (
     <View style={styles.container}>
@@ -44,5 +44,3 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
 })
-
-export default Home

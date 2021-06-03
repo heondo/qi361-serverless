@@ -1,7 +1,7 @@
 import React from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import {StyleSheet, View, Text} from 'react-native'
 
-function Profile(props) {
+export function Profile(props) {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Profile Tab</Text>
@@ -22,5 +22,3 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 })
-
-export default Profile

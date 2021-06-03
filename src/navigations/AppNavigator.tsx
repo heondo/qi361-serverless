@@ -3,10 +3,10 @@ import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 
-import Home from '../screens/Home'
-import Detail from '../screens/Detail'
-import Settings from '../screens/Settings'
-import Profile from '../screens/Profile'
+import {Home} from '../screens/Home'
+import {Detail} from '../screens/Detail'
+import {Settings} from '../screens/Settings'
+import {Profile} from '../screens/Profile'
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -26,7 +26,7 @@ function MainTabNavigator() {
   )
 }
 
-function MainStackNavigator() {
+export function MainStackNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -46,21 +46,25 @@ function MainStackNavigator() {
         <Stack.Screen
           name="Home"
           component={MainTabNavigator}
-          options={({route}) => route.name}
+          options={({route}) => ({
+            title: route.name,
+          })}
         />
         <Stack.Screen
           name="Detail"
           component={Detail}
-          options={({route}) => route.name}
+          options={({route}) => ({
+            title: route.name,
+          })}
         />
         <Stack.Screen
           name="Settings"
           component={Settings}
-          options={({route}) => route.name}
+          options={({route}) => ({
+            title: route.name,
+          })}
         />
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
-
-export default MainStackNavigator

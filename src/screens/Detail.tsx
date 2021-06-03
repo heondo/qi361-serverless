@@ -1,7 +1,7 @@
 import React from 'react'
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native'
 
-function Detail(props) {
+export function Detail(props) {
   const {route, navigation} = props
   const {item} = route.params
   const {name, home, species} = item
@@ -59,5 +59,3 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
 })
-
-export default Detail

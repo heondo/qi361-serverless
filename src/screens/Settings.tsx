@@ -1,7 +1,7 @@
 import React from 'react'
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native'
 
-const Settings = props => {
+export function Settings(props) {
   const {navigation} = props
   return (
     <View style={styles.container}>
@@ -38,5 +38,3 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
 })
-
-export default Settings
