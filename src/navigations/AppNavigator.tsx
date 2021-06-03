@@ -2,6 +2,7 @@ import * as React from 'react'
 import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
+import {SafeAreaProvider} from 'react-native-safe-area-context'
 
 import {Home} from '../screens/Home'
 import {Detail} from '../screens/Detail'
@@ -32,43 +33,45 @@ function MainTabNavigator() {
 // App
 export function MainStackNavigator() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Main"
-        screenOptions={{
-          gestureEnabled: true,
-          headerStyle: {
-            backgroundColor: 'lightgrey',
-          },
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-          headerTintColor: 'black',
-          headerBackTitleVisible: false,
-        }}
-        headerMode="float">
-        <Stack.Screen
-          name="Main"
-          component={MainTabNavigator}
-          options={({route}) => ({
-            title: route.name,
-          })}
-        />
-        <Stack.Screen
-          name="Detail"
-          component={Detail}
-          options={({route}) => ({
-            title: route.name,
-          })}
-        />
-        <Stack.Screen
-          name="Settings"
-          component={Settings}
-          options={({route}) => ({
-            title: route.name,
-          })}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName="Main"
+          screenOptions={{
+            gestureEnabled: true,
+            headerStyle: {
+              backgroundColor: 'lightgrey',
+            },
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+            headerTintColor: 'black',
+            headerBackTitleVisible: false,
+          }}
+          headerMode="float">
+          <Stack.Screen
+            name="Main"
+            component={MainTabNavigator}
+            options={({route}) => ({
+              title: route.name,
+            })}
+          />
+          <Stack.Screen
+            name="Detail"
+            component={Detail}
+            options={({route}) => ({
+              title: route.name,
+            })}
+          />
+          <Stack.Screen
+            name="Settings"
+            component={Settings}
+            options={({route}) => ({
+              title: route.name,
+            })}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   )
 }
