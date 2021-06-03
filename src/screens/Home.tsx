@@ -1,5 +1,15 @@
 import React from 'react'
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native'
+import {StackNavigationProp} from '@react-navigation/stack'
+import {RouteProp} from '@react-navigation/core'
+import {RootStackParamList} from '../types/navigation'
+
+type MainScreenRouteProp = RouteProp<RootStackParamList, 'Main'>
+type MainScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Main'>
+type Props = {
+  route: MainScreenRouteProp
+  navigation: MainScreenNavigationProp
+}
 
 const character = {
   name: 'Luke Skywalker',
@@ -7,7 +17,7 @@ const character = {
   species: 'human',
 }
 
-export function Home(props) {
+export function Home(props: Props) {
   const {navigation} = props
   return (
     <View style={styles.container}>

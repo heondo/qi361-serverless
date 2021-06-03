@@ -1,7 +1,20 @@
 import React from 'react'
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native'
+import {StackNavigationProp} from '@react-navigation/stack'
+import {RouteProp} from '@react-navigation/core'
+import {RootStackParamList} from '../types/navigation'
 
-export function Detail(props) {
+type DetailScreenRouteProp = RouteProp<RootStackParamList, 'Detail'>
+type DetailScreenNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'Detail'
+>
+type Props = {
+  route: DetailScreenRouteProp
+  navigation: DetailScreenNavigationProp
+}
+
+export function Detail(props: Props) {
   const {route, navigation} = props
   const {item} = route.params
   const {name, home, species} = item

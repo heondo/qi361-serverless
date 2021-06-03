@@ -1,7 +1,7 @@
 import React from 'react'
 import {StyleSheet, View, Text} from 'react-native'
 
-export function Profile(props) {
+export function Profile() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Profile Tab</Text>
