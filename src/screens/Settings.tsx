@@ -1,6 +1,5 @@
 import React from 'react'
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native'
-
 import {StackNavigationProp} from '@react-navigation/stack'
 import {RouteProp} from '@react-navigation/core'
 import {RootStackParamList} from '../types/navigation'
@@ -20,7 +19,7 @@ export function Settings(props: Props) {
   return (
     <View>
       <Text>Settings</Text>
-      <TouchableOpacity onPress={() => navigation.popToTop()}>
+      <TouchableOpacity onPress={() => navigation.navigate('Main')}>
         <Text>Go to Home</Text>
       </TouchableOpacity>
     </View>

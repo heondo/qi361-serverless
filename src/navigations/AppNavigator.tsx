@@ -1,50 +1,53 @@
 import * as React from 'react'
 import {NavigationContainer} from '@react-navigation/native'
-import {createStackNavigator} from '@react-navigation/stack'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {SafeAreaProvider} from 'react-native-safe-area-context'
-import {useColorScheme} from 'react-native-appearance'
-import {ThemeProvider} from 'react-native-elements'
 
-import {Home} from '../screens/Home'
-import {Detail} from '../screens/Detail'
-import {Settings} from '../screens/Settings'
 import {Profile} from '../screens/Profile'
-import {PointsList} from '../screens/PointsList'
 
-import {MainTabParamList, RootStackParamList} from '../types/navigation'
-import {themes} from '../constants/theme'
+import {HomeStackNavigator} from './HomeStack'
+import {SettingsStackNavigator} from './SettingsStack'
 
-const Stack = createStackNavigator<RootStackParamList>()
-const Tab = createBottomTabNavigator<MainTabParamList>()
+// const Stack = createStackNavigator<RootStackParamList>()
+const Tab = createBottomTabNavigator()
 
 // Tab bar component
-function MainTabNavigator() {
-  let colorScheme = useColorScheme()
-  const theme = themes[colorScheme]
+// function MainTabNavigator() {
+//   let colorScheme = useColorScheme()
+//   const theme = themes[colorScheme]
 
-  return (
-    <ThemeProvider useDark={colorScheme === 'dark'} theme={theme}>
-      <Tab.Navigator
-        tabBarOptions={{
-          activeTintColor: '#CB5254',
-          style: {
-            backgroundColor: theme.colors.primary,
-          },
-        }}>
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Profile" component={Profile} />
-      </Tab.Navigator>
-    </ThemeProvider>
-  )
-}
+//   return (
+//     <ThemeProvider useDark={colorScheme === 'dark'} theme={theme}>
+//       <Tab.Navigator
+//         tabBarOptions={{
+//           activeTintColor: '#CB5254',
+//           style: {
+//             backgroundColor: theme.colors.primary,
+//           },
+//         }}>
+//         <Tab.Screen name="Home" component={Home} />
+//         <Tab.Screen name="Profile" component={Profile} />
+//       </Tab.Navigator>
+//     </ThemeProvider>
+//   )
+// }
 
 // App
 export function MainStackNavigator() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Stack.Navigator
+        <Tab.Navigator
+          tabBarOptions={{
+            activeTintColor: '#CB5254',
+            style: {
+              backgroundColor: 'black',
+            },
+          }}>
+          <Tab.Screen name="Main" component={HomeStackNavigator} />
+          <Tab.Screen name="Profile" component={SettingsStackNavigator} />
+        </Tab.Navigator>
+        {/* <Stack.Navigator
           initialRouteName="Main"
           screenOptions={{
             gestureEnabled: true,
@@ -81,7 +84,7 @@ export function MainStackNavigator() {
               title: route.name,
             })}
           />
-        </Stack.Navigator>
+        </Stack.Navigator> */}
       </NavigationContainer>
     </SafeAreaProvider>
   )
