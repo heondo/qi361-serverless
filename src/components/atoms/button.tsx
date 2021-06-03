@@ -1,6 +1,6 @@
-import {Button} from 'react-native-elements'
-import styled from 'styled-components/native'
+import * as React from 'react'
+import {Button, ButtonProps} from 'react-native-elements'
 
-export const PrimaryButton = styled(Button)`
-  background-color: blue;
-`
+export const PrimaryButton = (props: ButtonProps) => {
+  return <Button raised {...props} />
+}

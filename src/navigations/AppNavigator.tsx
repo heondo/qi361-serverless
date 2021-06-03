@@ -20,9 +20,9 @@ function MainTabNavigator() {
   return (
     <Tab.Navigator
       tabBarOptions={{
-        activeTintColor: '#101010',
+        activeTintColor: '#CB5254',
         style: {
-          backgroundColor: '#ffd700',
+          backgroundColor: '#393E4A',
         },
       }}>
       <Tab.Screen name="Home" component={Home} />

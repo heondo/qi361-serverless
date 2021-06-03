@@ -21,7 +21,7 @@ export function PointsList(props: Props) {
   return (
     <Container>
       <Button
-        title="points list"
+        title="Settings"
         onPress={() => {
           navigation.navigate('Settings')
         }}
