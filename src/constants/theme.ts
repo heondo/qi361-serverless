@@ -7,26 +7,34 @@ const base = {
   },
 }
 
+const darkTheme = {
+  ...base,
+  colors: {primary: colors.gray['700']},
+  ListItemSubtitle: {
+    style: {
+      color: colors.white,
+    },
+  },
+  ListItem: {
+    containerStyle: {
+      backgroundColor: colors.gray['800'],
+    },
+  },
+}
+
 export const themes: {
   light: Theme
   dark: Theme
+  'no-preference': Theme
 } = {
   light: {
     ...base,
     colors: {primary: 'white'},
   },
   dark: {
-    ...base,
-    colors: {primary: colors.gray['700']},
-    ListItemSubtitle: {
-      style: {
-        color: colors.white,
-      },
-    },
-    ListItem: {
-      containerStyle: {
-        backgroundColor: colors.gray['800'],
-      },
-    },
+    ...darkTheme,
+  },
+  'no-preference': {
+    ...darkTheme,
   },
 }

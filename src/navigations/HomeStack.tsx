@@ -1,27 +1,32 @@
 import * as React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
+import {useColorScheme} from 'react-native-appearance'
 
 import {Detail} from '../screens/Detail'
 import {PointsList} from '../screens/PointsList'
 import {Home} from '../screens/Home'
 import {MainStackParamList} from '../types/navigation'
+import {createHeaderColors} from '../utils/colors'
 
 const Stack = createStackNavigator<MainStackParamList>()
 
 export function HomeStackNavigator() {
+  let colorScheme = useColorScheme()
+
+  const headerColors = createHeaderColors(colorScheme)
+
   return (
     <Stack.Navigator
       initialRouteName="Home"
       screenOptions={{
         gestureEnabled: true,
         headerStyle: {
-          backgroundColor: 'lightgrey',
+          backgroundColor: headerColors.bg,
         },
         headerTitleStyle: {
+          color: headerColors.color,
           fontWeight: 'bold',
         },
-        headerTintColor: 'black',
-        headerBackTitleVisible: false,
       }}
       headerMode="float">
       <Stack.Screen
