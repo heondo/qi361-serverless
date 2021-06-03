@@ -8,8 +8,9 @@ import {Home} from '../screens/Home'
 import {Detail} from '../screens/Detail'
 import {Settings} from '../screens/Settings'
 import {Profile} from '../screens/Profile'
+import {PointsList} from '../screens/PointsList'
 
-import {RootStackParamList, MainTabParamList} from '../types/navigation'
+import {MainTabParamList, RootStackParamList} from '../types/navigation'
 
 const Stack = createStackNavigator<RootStackParamList>()
 const Tab = createBottomTabNavigator<MainTabParamList>()
@@ -56,6 +57,8 @@ export function MainStackNavigator() {
               title: route.name,
             })}
           />
+          <Stack.Screen name="PointsList" component={PointsList} />
+
           <Stack.Screen
             name="Detail"
             component={Detail}

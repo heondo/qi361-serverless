@@ -1,10 +1,27 @@
 import React from 'react'
-import {StyleSheet, View, Text} from 'react-native'
+import {Button} from 'react-native-elements'
+import {Container} from '../components/atoms'
+import {RootStackParamList} from '../types/navigation'
+import {StackNavigationProp} from '@react-navigation/stack'
 
-export function Profile() {
+type ProfileScreenNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'Main'
+>
+
+type Props = {
+  navigation: ProfileScreenNavigationProp
+}
+
+export function Profile({navigation}: Props) {
   return (
-    <View>
-      <Text>Profile Tab</Text>
-    </View>
+    <Container>
+      <Button
+        title="Home"
+        onPress={() => {
+          navigation.navigate('Main', {screen: 'Home'})
+        }}
+      />
+    </Container>
   )
 }

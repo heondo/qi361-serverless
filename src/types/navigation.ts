@@ -1,8 +1,13 @@
-import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs'
+// import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs'
+// import {StackNavigationProp} from '@react-navigation/stack'
+import {NavigatorScreenParams} from '@react-navigation/native'
 
 export type RootStackParamList = {
-  Main: BottomTabNavigationProp<MainTabParamList>
+  Main: NavigatorScreenParams<MainTabParamList>
   Settings: undefined
+  PointsList: {
+    id: string
+  }
   Detail: {
     item: {
       name: string
