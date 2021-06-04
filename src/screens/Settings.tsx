@@ -1,6 +1,13 @@
 import {StackNavigationProp} from '@react-navigation/stack'
 import React from 'react'
-import {Container, Text, ThemeContainer} from '../components/atoms'
+import {onGoogleButtonPress} from '../api/auth'
+import {
+  Container,
+  Text,
+  ThemeContainer,
+  TouchableOpacity,
+} from '../components/atoms'
+import {SignInOptions} from '../components/organisms'
 import {RootTabParamList} from '../types/navigation'
 
 type SettingsScreenNavigationProp = StackNavigationProp<
@@ -13,10 +20,23 @@ type Props = {
 }
 
 export function Settings({navigation}: Props) {
+  const handleGoogleSignIn = async () => {
+    try {
+      // console.log('hello mate')
+      await onGoogleButtonPress()
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
   return (
     <ThemeContainer>
       <Container>
-        <Text>Hello</Text>
+        {/* {signIn} */}
+        <SignInOptions />
+        {/* <TouchableOpacity onPress={handleGoogleSignIn}>
+          <Text>Hello</Text>
+        </TouchableOpacity> */}
       </Container>
     </ThemeContainer>
   )

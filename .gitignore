@@ -61,4 +61,5 @@ buck-out/
 /android/app/google-services.json
 /src/data/*
 /static/data/*
+/static/secrets/*
 /static/images/*

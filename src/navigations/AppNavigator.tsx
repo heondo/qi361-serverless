@@ -18,8 +18,8 @@ export function MainStackNavigator() {
   const [user, setUser] = useState()
 
   // Handle user state changes
-  function onAuthStateChanged(user) {
-    setUser(user)
+  function onAuthStateChanged(u: any) {
+    setUser(u)
     if (initializing) setInitializing(false)
   }
 
