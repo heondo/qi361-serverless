@@ -1,11 +1,9 @@
 import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
 
-import {Home} from '../screens/Home'
-import {PointsList} from '../screens/PointsList'
-import {DetailsSwiper} from '../screens/DetailSwiper'
-import {MainStackParamList} from '../types'
-import {createHeaderColors} from '../utils'
+import {Home, DetailsSwiper, PointsList} from '@screens'
+import {MainStackParamList} from '@types'
+import {createHeaderColors} from '@utils'
 
 const Stack = createStackNavigator<MainStackParamList>()
 

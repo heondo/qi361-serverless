@@ -3,9 +3,9 @@ import {RouteProp} from '@react-navigation/core'
 import {StackNavigationProp} from '@react-navigation/stack'
 import Swiper from 'react-native-swiper'
 
-import {Container, Text, ThemeContainer} from '../components/atoms'
-import {MainStackParamList, RootTabParamList} from '../types'
-import {LoggedOutDetails} from '../components/organisms'
+import {Container, Text, ThemeContainer} from '@atoms'
+import {MainStackParamList, RootTabParamList} from '@types'
+import {LoggedOutDetails} from '@organisms'
 
 type DetailsScreenNavigationProp = StackNavigationProp<RootTabParamList, 'Main'>
 type DetailsSwiperScreenRouteProp = RouteProp<

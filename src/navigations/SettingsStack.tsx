@@ -1,9 +1,9 @@
 import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
 
-import {Settings} from '../screens/Settings'
-import {SettingsStackParamList} from '../types'
-import {createHeaderColors} from '../utils'
+import {Settings} from '@screens'
+import {SettingsStackParamList} from '@types'
+import {createHeaderColors} from '@utils'
 
 const Stack = createStackNavigator<SettingsStackParamList>()
 

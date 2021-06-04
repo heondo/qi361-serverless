@@ -7,37 +7,31 @@ import {HomeStackNavigator} from './HomeStack'
 import {SettingsStackNavigator} from './SettingsStack'
 import auth from '@react-native-firebase/auth'
 
-import {colors} from '../constants'
-import {RootTabParamList} from '../types'
-import {cleanUserObject} from '../utils'
+import {colors} from '@constants'
+import {RootTabParamList} from '@types'
+import {cleanUserObject} from '@utils'
 
-import {useAppDispatch} from '../store/hooks'
-import {thunkLogin, thunkLogout} from '../store/user/userSlice'
+import {useAppDispatch, thunkLogin} from '@store'
 
 const Tab = createBottomTabNavigator<RootTabParamList>()
 
 // App
 export function MainStackNavigator() {
-  // const [initializing, setInitializing] = useState(true)
-  // const [user, setUser] = useState()
-  // const user = useAppSelector(state => state.user.user)
   const dispatch = useAppDispatch()
 
-  // Handle user state changes
+  // firebase auth lifecycle hook
   function onAuthStateChanged(u: any) {
     const payload = cleanUserObject(u)
     if (payload) {
       dispatch(thunkLogin(payload))
     }
-    // the user object is here, for now. I must just save.
-    // setUser(u)
-    // if (initializing) setInitializing(false)
   }
 
   useEffect(() => {
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged)
     return subscriber // unsubscribe on unmount
   }, [])
+  // firebase auth lifecycle hook - end
 
   return (
     <SafeAreaProvider>

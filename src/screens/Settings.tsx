@@ -1,16 +1,10 @@
 import React from 'react'
 import {StackNavigationProp} from '@react-navigation/stack'
 
-import {
-  Col,
-  EmptySpace,
-  SettingsContainer,
-  Text,
-  ThemeContainer,
-} from '../components/atoms'
-import {SignInOptions, ProfileBanner} from '../components/organisms'
-import {RootTabParamList} from '../types/navigation'
-import {useAppSelector} from '../store/hooks'
+import {Col, EmptySpace, SettingsContainer, Text, ThemeContainer} from '@atoms'
+import {SignInOptions, ProfileBanner} from '@organisms'
+import {RootTabParamList} from '@types'
+import {useAppSelector} from '@store'
 
 type SettingsScreenNavigationProp = StackNavigationProp<
   RootTabParamList,
@@ -22,14 +16,14 @@ type Props = {
 }
 
 export function Settings({navigation}: Props) {
-  const user = useAppSelector(state => state.user.user)
+  const user = useAppSelector(state => state.auth.user)
 
   return (
     <ThemeContainer>
       <SettingsContainer>
         <Col>
           {/* ternary to show sign in options or users profile section. */}
-          {user ? <ProfileBanner /> : <SignInOptions />}
+          {user ? <ProfileBanner user={user} /> : <SignInOptions />}
         </Col>
         <EmptySpace />
         <Text>{JSON.stringify(user)}</Text>

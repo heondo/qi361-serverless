@@ -14,7 +14,9 @@
       "noUnusedLocals": true,
       "baseUrl": ".",
       "paths": {
-        "@components": ["./src/components"],
+        "@atoms": ["./src/components/atoms"],
+        "@molecules": ["./src/components/molecules"],
+        "@organisms": ["./src/components/organisms"],
         "@api": ["./src/api"],
         "@navigations": ["./src/navigations"],
         "@screens": ["./src/screens"],

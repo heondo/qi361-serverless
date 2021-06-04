@@ -1,5 +1,5 @@
 import styled from 'styled-components/native'
-import {BaseProps} from '../../types'
+import {BaseProps} from '@types'
 
 export const View = styled.View`
   width: ${(props: BaseProps) => (props.width ? props.width : 'auto')};

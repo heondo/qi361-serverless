@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {AppDispatch} from '..'
-import {signout} from '../../api'
-import {User} from '../../types'
+import {signout} from '@api'
+import {User} from '@types'
 
 export interface UserState {
   isLoading: boolean
@@ -23,7 +23,7 @@ type LoadingPayload = {
   message?: string
 }
 
-export const userSlice = createSlice({
+export const authSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
@@ -56,9 +56,9 @@ export const userSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const {setAuthLoading, setAuthError, login, logout, setUser} =
-  userSlice.actions
+  authSlice.actions
 
-export const userReducer = userSlice.reducer
+export const authReducer = authSlice.reducer
 
 // TODO what is the user object being passed in.
 export const thunkLogin = (user: User) => async (dispatch: AppDispatch) => {

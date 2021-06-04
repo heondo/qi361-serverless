@@ -1,7 +1,12 @@
 import React from 'react'
-import {Row, Text, ThemeContainer} from '../atoms'
+import {User} from '@types'
+import {Row, Text, ThemeContainer} from '@atoms'
 
-export function ProfileBanner() {
+type Props = {
+  user: User
+}
+
+export function ProfileBanner({user}: Props) {
   return (
     <ThemeContainer>
       <Row width="100%" justifyContent="space-between">

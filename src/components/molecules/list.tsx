@@ -1,5 +1,5 @@
 import React from 'react'
-import {ListBadgeContainer, ListBadgeText} from '../atoms'
+import {ListBadgeContainer, ListBadgeText} from '@atoms'
 
 export const ListBadge = ({
   children,

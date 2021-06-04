@@ -1,7 +1,7 @@
 import React from 'react'
 import {StackNavigationProp} from '@react-navigation/stack'
 
-import {MeridianDataType, RootTabParamList} from '../types'
+import {MeridianDataType, RootTabParamList} from '@types'
 import {
   FlatList,
   ListItemButton,
@@ -10,8 +10,8 @@ import {
   Row,
   Text,
   ThemeContainer,
-} from '../components/atoms'
-import {ListBadge} from '../components/molecules'
+} from '@atoms'
+import {ListBadge} from '@molecules'
 import GROUP_DATA from '../../static/data/groupData'
 
 type HomeScreenNavigationProp = StackNavigationProp<RootTabParamList, 'Main'>

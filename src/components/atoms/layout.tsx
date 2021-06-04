@@ -3,8 +3,8 @@ import styled, {ThemeProvider} from 'styled-components/native'
 import {ThemeProvider as RneThemeProvider} from 'react-native-elements'
 
 import {View} from './container'
-import {themes, ThemeType} from '../../constants'
-import {BaseProps} from '../../types'
+import {themes, ThemeType} from '@constants'
+import {BaseProps} from '@types'
 
 export const Row = styled(View)`
   display: flex;
