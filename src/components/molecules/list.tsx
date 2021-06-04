@@ -1,11 +1,15 @@
 import * as React from 'react'
-import {View} from 'react-native'
-import {ListItem} from '../atoms'
+import {BaseProps} from '../../types/styled'
+import {ListItem, ListBadgeContainer, ListBadgeText} from '../atoms'
 
-export const ListItemContainer = ({
-  children,
-}: {
-  children: React.ReactElement | React.ReactElement[]
-}) => {
+export const ListItemContainer = ({children}: BaseProps) => {
   return <ListItem>{children}</ListItem>
+}
+
+export const ListBadge = ({text}: {text: string}) => {
+  return (
+    <ListBadgeContainer>
+      <ListBadgeText>{text}</ListBadgeText>
+    </ListBadgeContainer>
+  )
 }

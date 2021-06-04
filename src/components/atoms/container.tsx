@@ -7,7 +7,7 @@ export const View = styled.View`
   height: ${(props: BaseProps) => (props.height ? props.height : 'auto')};
 `
 
-export const ListBadge = styled(View)`
+export const ListBadgeContainer = styled(View)`
   padding: 8px;
   width: 45px;
   height: 45px;

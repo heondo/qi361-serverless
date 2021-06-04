@@ -5,15 +5,13 @@ import {StackNavigationProp} from '@react-navigation/stack'
 import {RootTabParamList} from '../types/navigation'
 import {
   FlatList,
-  ListBadge,
-  ListBadgeText,
   ListItemText,
   Row,
   Text,
   ThemeContainer,
   TouchableOpacity,
 } from '../components/atoms'
-import {ListItemContainer} from '../components/molecules/list'
+import {ListItemContainer, ListBadge} from '../components/molecules'
 import GROUP_DATA, {MeridianDataType} from '../../static/data/groupData'
 
 type SettingsScreenNavigationProp = StackNavigationProp<
@@ -44,11 +42,12 @@ export function Home({navigation}: Props) {
             },
           })
         }}>
-        <Row>
-          <ListBadge>
-            <ListBadgeText>{item.meridianID}</ListBadgeText>
-          </ListBadge>
-          <ListItemText>{item.english}</ListItemText>
+        <Row justifyContent="space-between">
+          <Row>
+            <ListBadge text={item.meridianID} />
+            <ListItemText>{item.english}</ListItemText>
+          </Row>
+          <Text>14</Text>
         </Row>
       </TouchableOpacity>
     </ListItemContainer>
