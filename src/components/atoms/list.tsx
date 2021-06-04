@@ -1,12 +1,13 @@
 import styled from 'styled-components/native'
 
 export const FlatList = styled.FlatList`
-  background-color: ${props => props.theme.colors.primary};
+  background-color: ${props => props.theme.colors.bg};
 `
 
 export const ListItem = styled.View`
-  padding: 8px;
-  width: 100%;
+  padding: 12px;
+  margin: 4px 8px;
+  width: auto;
   border-radius: 8px;
   background-color: ${props => props.theme.colors.primary};
 `

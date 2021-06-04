@@ -19,7 +19,7 @@ export function MainStackNavigator() {
           tabBarOptions={{
             activeTintColor: colors.red['400'],
             style: {
-              backgroundColor: colors.gray['700'],
+              backgroundColor: colors.gray['800'],
             },
           }}>
           <Tab.Screen name="Main" component={HomeStackNavigator} />

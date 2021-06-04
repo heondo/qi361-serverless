@@ -1,11 +1,15 @@
 import React from 'react'
-import {Text} from 'react-native'
 import {ListItem} from 'react-native-elements'
 import {StackNavigationProp} from '@react-navigation/stack'
 
 import GROUP_DATA, {MeridianDataType} from '../data/groupData'
 import {RootTabParamList} from '../types/navigation'
-import {FlatList, ThemeContainer, TouchableOpacity} from '../components/atoms'
+import {
+  FlatList,
+  Text,
+  ThemeContainer,
+  TouchableOpacity,
+} from '../components/atoms'
 import {ListItemContainer} from '../components/molecules/list'
 
 type SettingsScreenNavigationProp = StackNavigationProp<
@@ -32,7 +36,7 @@ export function Home({navigation}: Props) {
             },
           })
         }}>
-        <Text>Hello</Text>
+        <Text>{item.english}</Text>
       </TouchableOpacity>
     </ListItemContainer>
     // <ListItem bottomDivider>

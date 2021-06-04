@@ -10,7 +10,13 @@ import colors from './colors'
 const darkTheme = {
   // ...base,
   colors: {
-    primary: colors.gray['700'],
+    bg: colors.blackAlpha['900'],
+    primary: colors.gray['800'],
+    secondary: colors.red['500'],
+    white: colors.white,
+  },
+  text: {
+    primary: colors.white,
   },
   // ListItemSubtitle: {
   //   style: {
