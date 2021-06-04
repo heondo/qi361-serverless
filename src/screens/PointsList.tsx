@@ -8,10 +8,8 @@ import {
   ListItemButton,
   ListItemText,
   Row,
-  Text,
   ListItemContainer,
   ThemeContainer,
-  TouchableOpacity,
 } from '../components/atoms'
 import {ListBadge} from '../components/molecules'
 import {MainStackParamList, RootTabParamList} from '../types/navigation'
@@ -35,8 +33,11 @@ export function PointsList({route, navigation}: Props) {
       <ListItemContainer>
         <ListItemButton
           onPress={() => {
-            navigation.navigate('Settings', {
-              screen: 'Settings',
+            navigation.navigate('Main', {
+              screen: 'DetailsSwiper',
+              params: {
+                pointData: point,
+              },
             })
           }}>
           <Row justifyContent="space-between">

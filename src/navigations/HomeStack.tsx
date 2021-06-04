@@ -5,6 +5,7 @@ import {PointsList} from '../screens/PointsList'
 import {Home} from '../screens/Home'
 import {MainStackParamList} from '../types/navigation'
 import {createHeaderColors} from '../utils/colors'
+import {DetailsSwiper} from '../screens/DetailSwiper'
 
 const Stack = createStackNavigator<MainStackParamList>()
 
@@ -41,6 +42,7 @@ export function HomeStackNavigator() {
           title: `${route.params.id} - ${route.params.header}`,
         })}
       />
+      <Stack.Screen name="DetailsSwiper" component={DetailsSwiper} />
     </Stack.Navigator>
   )
 }

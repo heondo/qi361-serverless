@@ -35,5 +35,5 @@ export const ListBadgeContainer = styled(View)`
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  background-color: ${colors.blackAlpha['300']};
+  background-color: ${colors.gray['700']};
 `

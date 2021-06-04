@@ -1,4 +1,5 @@
 import {NavigatorScreenParams} from '@react-navigation/native'
+import {PointType} from './meridians'
 
 export type RootTabParamList = {
   Main: NavigatorScreenParams<MainStackParamList>
@@ -8,12 +9,9 @@ export type RootTabParamList = {
 export type MainStackParamList = {
   Home: undefined
   PointsList: {id: string; header: string; points: string[]}
-  Detail: {
-    character: {
-      name: string
-      home: string
-      species: string
-    }
+  DetailsSwiper: {
+    pointData: PointType
+    // TODO: create the type
   }
 }
 

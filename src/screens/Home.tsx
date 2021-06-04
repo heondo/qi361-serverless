@@ -10,10 +10,10 @@ import {
   Row,
   Text,
   ThemeContainer,
-  TouchableOpacity,
 } from '../components/atoms'
 import {ListBadge} from '../components/molecules'
-import GROUP_DATA, {MeridianDataType} from '../../static/data/groupData'
+import GROUP_DATA from '../../static/data/groupData'
+import {MeridianDataType} from '../types/meridians'
 
 type HomeScreenNavigationProp = StackNavigationProp<RootTabParamList, 'Main'>
 

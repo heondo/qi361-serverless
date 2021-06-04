@@ -7,6 +7,6 @@ export interface BaseProps {
   justifyContent?: string
   alignItems?: string
   position?: 'left' | 'right'
-  theme?: ThemeType
+  theme: ThemeType
   children?: React.ReactElement | React.ReactElement[]
 }
