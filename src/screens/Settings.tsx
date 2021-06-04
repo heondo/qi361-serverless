@@ -25,14 +25,6 @@ type Props = {
 }
 
 export function Settings({navigation}: Props) {
-  const handleGoogleSignIn = async () => {
-    try {
-      await onGoogleButtonPress()
-    } catch (err) {
-      console.error(err)
-    }
-  }
-
   const user = useAppSelector(state => state.user.user)
   const dispatch = useAppDispatch()
 

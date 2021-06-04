@@ -48,7 +48,7 @@ export const userSlice = createSlice({
       state.user = null
     },
     setUser: (state, action: any) => {
-      console.log(action.payload)
+      //   console.log(action.payload)
       state.user = action.payload.user
     },
   },
@@ -61,7 +61,7 @@ export const {setAuthLoading, setAuthError, login, logout, setUser} =
 export const userReducer = userSlice.reducer
 
 // TODO what is the user object being passed in.
-export const thunkLogin = (user: any) => async (dispatch: AppDispatch) => {
+export const thunkLogin = (user: User) => async (dispatch: AppDispatch) => {
   try {
     dispatch(setAuthError(null))
     dispatch(
