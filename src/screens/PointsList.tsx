@@ -1,10 +1,16 @@
 import {RouteProp} from '@react-navigation/core'
 import {StackNavigationProp} from '@react-navigation/stack'
 import React from 'react'
-import {FlatList} from 'react-native'
 import {ListItem} from 'react-native-elements'
+import {POINTS_DATA} from '../../static/data/pointData'
 
-import {ThemeContainer, TouchableOpacity} from '../components/atoms'
+import {
+  FlatList,
+  Text,
+  ThemeContainer,
+  TouchableOpacity,
+} from '../components/atoms'
+import {ListItemContainer} from '../components/molecules'
 import {MainStackParamList, RootTabParamList} from '../types/navigation'
 
 type PointsScreenNavigationProp = StackNavigationProp<RootTabParamList, 'Main'>
@@ -17,34 +23,24 @@ type Props = {
 }
 
 export function PointsList({route, navigation}: Props) {
-  const keyExtractor = (item: any, index) => index
+  const keyExtractor = (item: any, index: number) => item
+  const {points} = route.params
 
-  console.log(route.params.id)
-
-  const renderItem = ({item}) => (
-    <ListItem bottomDivider>
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate('Main', {
-            screen: 'PointsList',
-            params: {
-              id: item.meridianID,
-              header: item.english,
-            },
-          })
-        }}>
-        <ListItem.Content>
-          <ListItem.Title>{item.english}</ListItem.Title>
-          <ListItem.Subtitle>{item.english}</ListItem.Subtitle>
-        </ListItem.Content>
-      </TouchableOpacity>
-      <ListItem.Chevron />
-    </ListItem>
+  const renderItem = ({item}: {item: string}) => (
+    <TouchableOpacity>
+      <ListItemContainer>
+        <Text>{item}</Text>
+      </ListItemContainer>
+    </TouchableOpacity>
   )
 
   return (
     <ThemeContainer>
-      <FlatList keyExtractor={keyExtractor} renderItem={renderItem} />
+      <FlatList
+        keyExtractor={keyExtractor}
+        data={points}
+        renderItem={renderItem}
+      />
     </ThemeContainer>
   )
 }

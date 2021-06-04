@@ -7,6 +7,8 @@ import colors from './colors'
 //   },
 // }
 
+export type ThemeType = typeof darkTheme
+
 const darkTheme = {
   // ...base,
   colors: {

@@ -23,8 +23,8 @@ export function HomeStackNavigator() {
         headerStyle: {
           backgroundColor: headerColors.bg,
         },
+        headerTintColor: headerColors.color,
         headerTitleStyle: {
-          color: headerColors.color,
           fontWeight: 'bold',
         },
       }}
@@ -40,7 +40,7 @@ export function HomeStackNavigator() {
         name="PointsList"
         component={PointsList}
         options={({route}) => ({
-          title: `${route.params.id}`,
+          title: `${route.params.id} - ${route.params.header}`,
         })}
       />
 

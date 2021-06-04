@@ -2,7 +2,6 @@ import React from 'react'
 import {ListItem} from 'react-native-elements'
 import {StackNavigationProp} from '@react-navigation/stack'
 
-import GROUP_DATA, {MeridianDataType} from '../data/groupData'
 import {RootTabParamList} from '../types/navigation'
 import {
   FlatList,
@@ -11,6 +10,7 @@ import {
   TouchableOpacity,
 } from '../components/atoms'
 import {ListItemContainer} from '../components/molecules/list'
+import GROUP_DATA, {MeridianDataType} from '../../static/data/groupData'
 
 type SettingsScreenNavigationProp = StackNavigationProp<
   RootTabParamList,
@@ -33,6 +33,7 @@ export function Home({navigation}: Props) {
             params: {
               id: item.meridianID,
               header: item.english,
+              points: item.points,
             },
           })
         }}>
