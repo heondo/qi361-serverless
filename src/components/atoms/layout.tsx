@@ -3,13 +3,30 @@ import styled, {ThemeProvider} from 'styled-components/native'
 import {ThemeProvider as RneThemeProvider} from 'react-native-elements'
 // import {useColorScheme} from 'react-native-appearance'
 import {themes, ThemeType} from '../../constants/theme'
+import {View} from './container'
+import {BaseProps} from '../../types/styled'
 
-export const Container = styled.View`
+export const Container = styled(View)`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: ${(props: {theme: ThemeType}) =>
-    props.theme.colors.primary};
+  background-color: ${(props: BaseProps) => props.theme.colors.primary};
+`
+
+export const Row = styled(View)`
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  align-items: center;
+  justify-content: ${(props: BaseProps) =>
+    props.justifyContent ? props.justifyContent : 'flex-start'};
+`
+
+export const Col = styled(View)`
+  display: flex;
+  width: auto;
+  justify-content: ${(props: BaseProps) =>
+    props.justifyContent ? props.justifyContent : 'flex-start'};
 `
 
 export const ThemeContainer = ({children}: {children: React.ReactElement}) => {

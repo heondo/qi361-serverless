@@ -5,6 +5,10 @@ import {StackNavigationProp} from '@react-navigation/stack'
 import {RootTabParamList} from '../types/navigation'
 import {
   FlatList,
+  ListBadge,
+  ListBadgeText,
+  ListItemText,
+  Row,
   Text,
   ThemeContainer,
   TouchableOpacity,
@@ -40,7 +44,12 @@ export function Home({navigation}: Props) {
             },
           })
         }}>
-        <Text>{item.english}</Text>
+        <Row>
+          <ListBadge>
+            <ListBadgeText>{item.meridianID}</ListBadgeText>
+          </ListBadge>
+          <ListItemText>{item.english}</ListItemText>
+        </Row>
       </TouchableOpacity>
     </ListItemContainer>
   )

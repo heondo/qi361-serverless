@@ -7,7 +7,7 @@ export const FlatList = styled.FlatList`
 
 export const ListItem = styled.View`
   padding: 12px;
-  margin: 6px 8px;
+  margin: 8px 8px;
   width: auto;
   border-radius: 8px;
   background-color: ${(props: {theme: ThemeType}) =>
