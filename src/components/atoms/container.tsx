@@ -12,7 +12,7 @@ export const ListBadgeContainer = styled(View)`
   width: 45px;
   height: 45px;
   margin: ${(props: BaseProps) =>
-    props.position === 'right' ? '0 0 0 12px' : '0 12px 0 0'};
+    props.position === 'right' ? '0 0 0 14px' : '0 14px 0 0'};
   display: flex;
   flex-direction: row;
   justify-content: center;
