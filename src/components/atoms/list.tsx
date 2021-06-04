@@ -1,6 +1,5 @@
 import styled from 'styled-components/native'
-import colors from '../../constants/colors'
-import {ThemeType} from '../../constants/theme'
+import {colors, ThemeType} from '../../constants'
 import {BaseProps} from '../../types/styled'
 import {TouchableOpacity} from './button'
 import {View} from './container'

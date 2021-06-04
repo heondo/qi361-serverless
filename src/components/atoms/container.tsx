@@ -1,5 +1,5 @@
 import styled from 'styled-components/native'
-import {BaseProps} from '../../types/styled'
+import {BaseProps} from '../../types'
 import {Col} from './layout'
 
 export const View = styled.View`

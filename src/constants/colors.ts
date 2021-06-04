@@ -3,7 +3,7 @@
  */
 export type Colors = typeof colors
 
-const colors = {
+export const colors = {
   transparent: 'transparent',
   current: 'currentColor',
   black: '#000000',
@@ -243,5 +243,3 @@ const colors = {
     900: '#003F5E',
   },
 }
-
-export default colors

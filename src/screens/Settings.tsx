@@ -1,19 +1,16 @@
 import React from 'react'
 import {StackNavigationProp} from '@react-navigation/stack'
 
-import {onGoogleButtonPress} from '../api/auth'
 import {
   Col,
   EmptySpace,
   SettingsContainer,
   Text,
   ThemeContainer,
-  TouchableOpacity,
 } from '../components/atoms'
-import {SignInOptions} from '../components/organisms'
+import {SignInOptions, ProfileBanner} from '../components/organisms'
 import {RootTabParamList} from '../types/navigation'
-import {useAppDispatch, useAppSelector} from '../store/hooks'
-import {thunkLogout} from '../store/user/userSlice'
+import {useAppSelector} from '../store/hooks'
 
 type SettingsScreenNavigationProp = StackNavigationProp<
   RootTabParamList,
@@ -26,23 +23,13 @@ type Props = {
 
 export function Settings({navigation}: Props) {
   const user = useAppSelector(state => state.user.user)
-  const dispatch = useAppDispatch()
 
   return (
     <ThemeContainer>
       <SettingsContainer>
         <Col>
           {/* ternary to show sign in options or users profile section. */}
-          {user ? (
-            <TouchableOpacity
-              onPress={() => {
-                dispatch(thunkLogout())
-              }}>
-              <Text>Youre in</Text>
-            </TouchableOpacity>
-          ) : (
-            <SignInOptions />
-          )}
+          {user ? <ProfileBanner /> : <SignInOptions />}
         </Col>
         <EmptySpace />
         <Text>{JSON.stringify(user)}</Text>

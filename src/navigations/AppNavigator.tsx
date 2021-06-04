@@ -7,7 +7,7 @@ import {HomeStackNavigator} from './HomeStack'
 import {SettingsStackNavigator} from './SettingsStack'
 import auth from '@react-native-firebase/auth'
 
-import colors from '../constants/colors'
+import {colors} from '../constants'
 import {RootTabParamList} from '../types/navigation'
 
 import {useAppDispatch} from '../store/hooks'

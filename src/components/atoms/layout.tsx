@@ -1,14 +1,15 @@
-import * as React from 'react'
+import React from 'react'
 import styled, {ThemeProvider} from 'styled-components/native'
 import {ThemeProvider as RneThemeProvider} from 'react-native-elements'
 // import {useColorScheme} from 'react-native-appearance'
-import {themes, ThemeType} from '../../constants/theme'
+import {themes, ThemeType} from '../../constants'
 import {View} from './container'
-import {BaseProps} from '../../types/styled'
+import {BaseProps} from '../../types'
 
 export const Row = styled(View)`
   display: flex;
   flex-direction: row;
+  /* flex: 1; */
   width: auto;
   align-items: center;
   justify-content: ${(props: BaseProps) =>
