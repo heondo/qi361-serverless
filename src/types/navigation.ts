@@ -11,7 +11,7 @@ export type MainStackParamList = {
   PointsList: {id: string; header: string; points: string[]}
   DetailsSwiper: {
     pointData: PointType
-    // TODO: create the type
+    meridianPoints: string[]
   }
 }
 

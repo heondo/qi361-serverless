@@ -37,6 +37,7 @@ export function PointsList({route, navigation}: Props) {
               screen: 'DetailsSwiper',
               params: {
                 pointData: point,
+                meridianPoints: points,
               },
             })
           }}>

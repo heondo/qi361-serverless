@@ -42,7 +42,13 @@ export function HomeStackNavigator() {
           title: `${route.params.id} - ${route.params.header}`,
         })}
       />
-      <Stack.Screen name="DetailsSwiper" component={DetailsSwiper} />
+      <Stack.Screen
+        name="DetailsSwiper"
+        component={DetailsSwiper}
+        options={() => ({
+          headerShown: false,
+        })}
+      />
     </Stack.Navigator>
   )
 }
