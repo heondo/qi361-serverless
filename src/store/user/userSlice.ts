@@ -1,9 +1,11 @@
-import {createSlice} from '@reduxjs/toolkit'
+import {createSlice, PayloadAction} from '@reduxjs/toolkit'
+import {AppDispatch} from '..'
+import {signout} from '../../api/auth'
 import {User} from '../../types/auth'
 
 export interface UserState {
   isLoading: boolean
-  loadingMessage: boolean
+  loadingMessage: string
   error: string | null
   user: null | User // TODO create user type
 }
@@ -11,32 +13,94 @@ export interface UserState {
 // Define the initial state using that type
 const initialState: UserState = {
   isLoading: false,
-  loadingMessage: false,
+  loadingMessage: '',
   error: null,
   user: null,
+}
+
+type LoadingPayload = {
+  status: boolean
+  message?: string
 }
 
 export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    increment: state => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      //   state.value += 1
+    // redux auth loading state and message
+    setAuthLoading: (state, action: PayloadAction<LoadingPayload>) => {
+      const {status, message} = action.payload
+      state.loadingMessage = message || ''
+      if (!status) {
+        state.loadingMessage = ''
+      }
+      state.isLoading = action.payload.status
     },
-    login: (state, action) => {
-      console.log(state, action)
+    setAuthError: (state, action: PayloadAction<string | null>) => {
+      state.error = action.payload
     },
-    incrementByAmount: (state, action) => {
-      //   state.value += action.payload
+    // login reducer
+    login: (state, action: PayloadAction<any>) => {
+      //   console.log(state, action)
+      state.user = action.payload.user
+    },
+    logout: state => {
+      state.user = null
+    },
+    setUser: (state, action: any) => {
+      console.log(action.payload)
+      state.user = action.payload.user
     },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const {increment, login, incrementByAmount} = userSlice.actions
+export const {setAuthLoading, setAuthError, login, logout, setUser} =
+  userSlice.actions
 
 export const userReducer = userSlice.reducer
+
+// TODO what is the user object being passed in.
+export const thunkLogin = (user: any) => async (dispatch: AppDispatch) => {
+  try {
+    dispatch(setAuthError(null))
+    dispatch(
+      setAuthLoading({
+        status: true,
+        message: 'logging in',
+      }),
+    )
+    dispatch(login({user}))
+    // dispatch(setUser({user}))
+    // const userImages = await firebaseService.getUserImages(user.uid)
+    // dispatch(
+    //   initializeImages({
+    //     userImages,
+    //   }),
+    // )
+    dispatch(
+      setAuthLoading({
+        status: false,
+      }),
+    )
+  } catch (err) {
+    dispatch(setAuthError(err.message))
+    console.error(err)
+  } finally {
+    dispatch(
+      setAuthLoading({
+        status: false,
+      }),
+    )
+  }
+}
+
+export const thunkLogout = () => async (dispatch: AppDispatch) => {
+  try {
+    await signout()
+    dispatch(logout())
+    // dispatch(setImagesNull())
+  } catch (err) {
+    console.error(err)
+  }
+}

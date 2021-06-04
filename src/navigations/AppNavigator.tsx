@@ -10,17 +10,24 @@ import auth from '@react-native-firebase/auth'
 import colors from '../constants/colors'
 import {RootTabParamList} from '../types/navigation'
 
+import {useAppDispatch} from '../store/hooks'
+import {thunkLogin} from '../store/user/userSlice'
+
 const Tab = createBottomTabNavigator<RootTabParamList>()
 
 // App
 export function MainStackNavigator() {
-  const [initializing, setInitializing] = useState(true)
-  const [user, setUser] = useState()
+  // const [initializing, setInitializing] = useState(true)
+  // const [user, setUser] = useState()
+  // const user = useAppSelector(state => state.user.user)
+  const dispatch = useAppDispatch()
 
   // Handle user state changes
   function onAuthStateChanged(u: any) {
-    setUser(u)
-    if (initializing) setInitializing(false)
+    dispatch(thunkLogin(u))
+    // the user object is here, for now. I must just save.
+    // setUser(u)
+    // if (initializing) setInitializing(false)
   }
 
   useEffect(() => {

@@ -8,11 +8,12 @@ import {
   SettingsContainer,
   Text,
   ThemeContainer,
+  TouchableOpacity,
 } from '../components/atoms'
 import {SignInOptions} from '../components/organisms'
 import {RootTabParamList} from '../types/navigation'
-import {decrement, increment} from '../store/counter/counterSlice'
 import {useAppDispatch, useAppSelector} from '../store/hooks'
+import {thunkLogout} from '../store/user/userSlice'
 
 type SettingsScreenNavigationProp = StackNavigationProp<
   RootTabParamList,
@@ -32,7 +33,7 @@ export function Settings({navigation}: Props) {
     }
   }
 
-  const count = useAppSelector(state => state.counter.value)
+  const user = useAppSelector(state => state.user.user)
   const dispatch = useAppDispatch()
 
   return (
@@ -40,10 +41,19 @@ export function Settings({navigation}: Props) {
       <SettingsContainer>
         <Col>
           {/* ternary to show sign in options or users profile section. */}
-          <SignInOptions />
+          {user ? (
+            <TouchableOpacity
+              onPress={() => {
+                dispatch(thunkLogout())
+              }}>
+              <Text>Youre in</Text>
+            </TouchableOpacity>
+          ) : (
+            <SignInOptions />
+          )}
         </Col>
         <EmptySpace />
-        <Text>{count}</Text>
+        <Text>{JSON.stringify(user)}</Text>
       </SettingsContainer>
     </ThemeContainer>
   )

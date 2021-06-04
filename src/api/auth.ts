@@ -15,3 +15,11 @@ export const onGoogleButtonPress = async () => {
     console.error(err)
   }
 }
+
+export const signout = async () => {
+  try {
+    await auth().signOut()
+  } catch (err) {
+    console.error(err)
+  }
+}
