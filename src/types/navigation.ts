@@ -1,5 +1,3 @@
-// import {BottomStackNavigationProp} from '@react-navigation/bottom-Stacks'
-// import {StackNavigationProp} from '@react-navigation/stack'
 import {NavigatorScreenParams} from '@react-navigation/native'
 
 export type RootTabParamList = {

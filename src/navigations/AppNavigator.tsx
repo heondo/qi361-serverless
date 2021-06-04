@@ -6,6 +6,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context'
 import {HomeStackNavigator} from './HomeStack'
 import {SettingsStackNavigator} from './SettingsStack'
 import {RootTabParamList} from '../types/navigation'
+import colors from '../constants/colors'
 
 const Tab = createBottomTabNavigator<RootTabParamList>()
 
@@ -16,9 +17,9 @@ export function MainStackNavigator() {
       <NavigationContainer>
         <Tab.Navigator
           tabBarOptions={{
-            activeTintColor: '#CB5254',
+            activeTintColor: colors.red['400'],
             style: {
-              backgroundColor: 'black',
+              backgroundColor: colors.gray['700'],
             },
           }}>
           <Tab.Screen name="Main" component={HomeStackNavigator} />
