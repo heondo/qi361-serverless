@@ -47,7 +47,7 @@ export function Home({navigation}: Props) {
             <ListBadge text={item.meridianID} />
             <ListItemText>{item.english}</ListItemText>
           </Row>
-          <Text>14</Text>
+          <Text>0/{item.points.length}</Text>
         </Row>
       </TouchableOpacity>
     </ListItemContainer>
