@@ -1,17 +1,18 @@
-import {StackNavigationProp} from '@react-navigation/stack'
 import React from 'react'
+import {StackNavigationProp} from '@react-navigation/stack'
+
 import {onGoogleButtonPress} from '../api/auth'
 import {
   Col,
-  Container,
   EmptySpace,
   SettingsContainer,
   Text,
   ThemeContainer,
-  TouchableOpacity,
 } from '../components/atoms'
 import {SignInOptions} from '../components/organisms'
 import {RootTabParamList} from '../types/navigation'
+import {decrement, increment} from '../store/counter/counterSlice'
+import {useAppDispatch, useAppSelector} from '../store/hooks'
 
 type SettingsScreenNavigationProp = StackNavigationProp<
   RootTabParamList,
@@ -25,12 +26,14 @@ type Props = {
 export function Settings({navigation}: Props) {
   const handleGoogleSignIn = async () => {
     try {
-      // console.log('hello mate')
       await onGoogleButtonPress()
     } catch (err) {
       console.error(err)
     }
   }
+
+  const count = useAppSelector(state => state.counter.value)
+  const dispatch = useAppDispatch()
 
   return (
     <ThemeContainer>
@@ -40,7 +43,7 @@ export function Settings({navigation}: Props) {
           <SignInOptions />
         </Col>
         <EmptySpace />
-        <Text>Delete your thing</Text>
+        <Text>{count}</Text>
       </SettingsContainer>
     </ThemeContainer>
   )
