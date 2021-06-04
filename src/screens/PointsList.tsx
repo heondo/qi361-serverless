@@ -31,7 +31,12 @@ export function PointsList({route, navigation}: Props) {
     const point = POINTS_DATA[item]
     return (
       <ListItemContainer>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('Settings', {
+              screen: 'Settings',
+            })
+          }}>
           <Row justifyContent="space-between">
             <Row>
               <ListBadge text={item.split('-')[1]} />

@@ -14,13 +14,10 @@ import {
 import {ListItemContainer, ListBadge} from '../components/molecules'
 import GROUP_DATA, {MeridianDataType} from '../../static/data/groupData'
 
-type SettingsScreenNavigationProp = StackNavigationProp<
-  RootTabParamList,
-  'Main'
->
+type HomeScreenNavigationProp = StackNavigationProp<RootTabParamList, 'Main'>
 
 type Props = {
-  navigation: SettingsScreenNavigationProp
+  navigation: HomeScreenNavigationProp
 }
 
 export function Home({navigation}: Props) {

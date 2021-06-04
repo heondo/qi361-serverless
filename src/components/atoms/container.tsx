@@ -7,16 +7,9 @@ export const View = styled.View`
   height: ${(props: BaseProps) => (props.height ? props.height : 'auto')};
 `
 
-export const ListBadgeContainer = styled(View)`
-  padding: 8px;
-  width: 45px;
-  height: 45px;
-  margin: ${(props: BaseProps) =>
-    props.position === 'right' ? '0 0 0 14px' : '0 14px 0 0'};
-  display: flex;
-  flex-direction: row;
+export const Container = styled(View)`
+  flex: 1;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
-  background-color: ${colors.gray['700']};
+  background-color: ${(props: BaseProps) => props.theme.colors.primary};
 `

@@ -8,7 +8,7 @@ export const createHeaderColors = (
 } => {
   // dark by default
   const rets = {
-    bg: colors.gray['800'],
+    bg: colors.gray['900'],
     color: colors.white,
   }
 

@@ -1,6 +1,5 @@
 import * as React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
-import {useColorScheme} from 'react-native-appearance'
 
 import {PointsList} from '../screens/PointsList'
 import {Home} from '../screens/Home'
