@@ -1,9 +1,9 @@
 import React from 'react'
 import styled, {ThemeProvider} from 'styled-components/native'
 import {ThemeProvider as RneThemeProvider} from 'react-native-elements'
-// import {useColorScheme} from 'react-native-appearance'
-import {themes, ThemeType} from '../../constants'
+
 import {View} from './container'
+import {themes, ThemeType} from '../../constants'
 import {BaseProps} from '../../types'
 
 export const Row = styled(View)`

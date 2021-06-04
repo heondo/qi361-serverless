@@ -1,8 +1,8 @@
 import React from 'react'
 import {TouchableOpacity} from 'react-native-gesture-handler'
-import {onGoogleButtonPress, signout} from '../../api/auth'
+import {onGoogleButtonPress} from '../../api'
 
-import {Text, ThemeContainer, Container} from '../atoms'
+import {Text, ThemeContainer} from '../atoms'
 
 export function SignInOptions() {
   return (

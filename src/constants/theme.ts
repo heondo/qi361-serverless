@@ -1,4 +1,3 @@
-import {Theme} from 'react-native-elements'
 import {colors} from './colors'
 
 // const base: Theme = {

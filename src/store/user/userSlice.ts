@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {AppDispatch} from '..'
-import {signout} from '../../api/auth'
-import {User} from '../../types/auth'
+import {signout} from '../../api'
+import {User} from '../../types'
 
 export interface UserState {
   isLoading: boolean

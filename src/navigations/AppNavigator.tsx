@@ -8,11 +8,11 @@ import {SettingsStackNavigator} from './SettingsStack'
 import auth from '@react-native-firebase/auth'
 
 import {colors} from '../constants'
-import {RootTabParamList} from '../types/navigation'
+import {RootTabParamList} from '../types'
+import {cleanUserObject} from '../utils'
 
 import {useAppDispatch} from '../store/hooks'
 import {thunkLogin, thunkLogout} from '../store/user/userSlice'
-import {cleanUserObject} from '../utils/auth'
 
 const Tab = createBottomTabNavigator<RootTabParamList>()
 

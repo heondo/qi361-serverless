@@ -1,7 +1,7 @@
 import React from 'react'
 import {StackNavigationProp} from '@react-navigation/stack'
 
-import {RootTabParamList} from '../../types/navigation'
+import {RootTabParamList} from '../../types'
 import {Text, ThemeContainer, ScreenContainer} from '../atoms'
 import {POINTS_DATA} from '../../../static/data/pointData'
 

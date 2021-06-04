@@ -1,4 +1,4 @@
-import {User} from '../types/auth'
+import {User} from '../types'
 
 export const cleanUserObject = (user: any): User | null => {
   if (!user) return null

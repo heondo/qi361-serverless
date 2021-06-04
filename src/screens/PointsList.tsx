@@ -12,7 +12,7 @@ import {
   ThemeContainer,
 } from '../components/atoms'
 import {ListBadge} from '../components/molecules'
-import {MainStackParamList, RootTabParamList} from '../types/navigation'
+import {MainStackParamList, RootTabParamList} from '../types'
 
 type PointsScreenNavigationProp = StackNavigationProp<RootTabParamList, 'Main'>
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import {ThemeType} from '../constants/theme'
+import {ThemeType} from '../constants'
 
 export interface BaseProps {
   width?: string
