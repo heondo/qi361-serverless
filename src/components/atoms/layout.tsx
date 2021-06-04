@@ -17,9 +17,11 @@ export const Row = styled(View)`
 
 export const Col = styled(View)`
   display: flex;
+  flex-direction: column;
   width: auto;
   justify-content: ${(props: BaseProps) =>
     props.justifyContent ? props.justifyContent : 'flex-start'};
+  align-items: flex-start;
 `
 
 export const ThemeContainer = ({children}: {children: React.ReactElement}) => {

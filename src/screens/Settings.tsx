@@ -2,6 +2,7 @@ import {StackNavigationProp} from '@react-navigation/stack'
 import React from 'react'
 import {onGoogleButtonPress} from '../api/auth'
 import {
+  Col,
   Container,
   Text,
   ThemeContainer,
@@ -32,8 +33,11 @@ export function Settings({navigation}: Props) {
   return (
     <ThemeContainer>
       <Container>
+        <Col>
+          <SignInOptions />
+          <SignInOptions />
+        </Col>
         {/* {signIn} */}
-        <SignInOptions />
         {/* <TouchableOpacity onPress={handleGoogleSignIn}>
           <Text>Hello</Text>
         </TouchableOpacity> */}
