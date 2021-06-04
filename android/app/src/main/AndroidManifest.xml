@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.qi361">
+  package="com.heondo.qi361">
 
     <uses-permission android:name="android.permission.INTERNET" />
 

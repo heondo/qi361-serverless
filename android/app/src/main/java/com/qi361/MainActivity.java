@@ -1,4 +1,4 @@
-package com.qi361;
+package com.heondo.qi361;
 
 import com.facebook.react.ReactActivity;
 
