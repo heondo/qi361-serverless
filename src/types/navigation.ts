@@ -10,7 +10,7 @@ export type MainStackParamList = {
   Home: undefined
   PointsList: {id: string; header: string; points: string[]}
   DetailsSwiper: {
-    pointData: PointType
+    pointID: string
     meridianPoints: string[]
   }
 }
