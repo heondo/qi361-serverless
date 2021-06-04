@@ -11,7 +11,7 @@ export const ListItemText = styled(Text)`
 `
 
 export const ListBadgeText = styled(Text)`
-  color: ${colors.whiteAlpha['700']};
-  font-size: 14px;
+  color: ${colors.whiteAlpha['800']};
+  font-size: 13px;
   font-weight: bold;
 `

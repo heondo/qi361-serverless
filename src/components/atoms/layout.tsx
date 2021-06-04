@@ -21,7 +21,11 @@ export const Col = styled(View)`
   width: auto;
   justify-content: ${(props: BaseProps) =>
     props.justifyContent ? props.justifyContent : 'flex-start'};
-  align-items: flex-start;
+  align-items: center;
+`
+
+export const EmptySpace = styled(View)`
+  flex: 1;
 `
 
 export const ThemeContainer = ({children}: {children: React.ReactElement}) => {

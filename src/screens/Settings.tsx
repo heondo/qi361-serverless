@@ -4,6 +4,8 @@ import {onGoogleButtonPress} from '../api/auth'
 import {
   Col,
   Container,
+  EmptySpace,
+  SettingsContainer,
   Text,
   ThemeContainer,
   TouchableOpacity,
@@ -32,16 +34,14 @@ export function Settings({navigation}: Props) {
 
   return (
     <ThemeContainer>
-      <Container>
+      <SettingsContainer>
         <Col>
-          <SignInOptions />
+          {/* ternary to show sign in options or users profile section. */}
           <SignInOptions />
         </Col>
-        {/* {signIn} */}
-        {/* <TouchableOpacity onPress={handleGoogleSignIn}>
-          <Text>Hello</Text>
-        </TouchableOpacity> */}
-      </Container>
+        <EmptySpace />
+        <Text>Delete your thing</Text>
+      </SettingsContainer>
     </ThemeContainer>
   )
 }
