@@ -11,7 +11,7 @@ import {createHeaderColors} from '../utils/colors'
 const Stack = createStackNavigator<MainStackParamList>()
 
 export function HomeStackNavigator() {
-  let colorScheme = useColorScheme()
+  const colorScheme = 'dark' // useColorScheme()
 
   const headerColors = createHeaderColors(colorScheme)
 

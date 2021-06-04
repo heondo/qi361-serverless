@@ -1,11 +1,12 @@
 import React from 'react'
-import {FlatList} from 'react-native'
+import {Text} from 'react-native'
 import {ListItem} from 'react-native-elements'
 import {StackNavigationProp} from '@react-navigation/stack'
 
 import GROUP_DATA, {MeridianDataType} from '../data/groupData'
 import {RootTabParamList} from '../types/navigation'
-import {ThemeContainer, TouchableOpacity} from '../components/atoms'
+import {FlatList, ThemeContainer, TouchableOpacity} from '../components/atoms'
+import {ListItemContainer} from '../components/molecules/list'
 
 type SettingsScreenNavigationProp = StackNavigationProp<
   RootTabParamList,
@@ -20,7 +21,7 @@ export function Home({navigation}: Props) {
   const keyExtractor = (item: any) => item.meridianID
 
   const renderItem = ({item}: {item: MeridianDataType}) => (
-    <ListItem bottomDivider>
+    <ListItemContainer>
       <TouchableOpacity
         onPress={() => {
           navigation.navigate('Main', {
@@ -31,13 +32,27 @@ export function Home({navigation}: Props) {
             },
           })
         }}>
-        <ListItem.Content>
-          <ListItem.Title>{item.english}</ListItem.Title>
-          <ListItem.Subtitle>{item.english}</ListItem.Subtitle>
-        </ListItem.Content>
+        <Text>Hello</Text>
       </TouchableOpacity>
-      {/* <ListItem.Chevron /> */}
-    </ListItem>
+    </ListItemContainer>
+    // <ListItem bottomDivider>
+    //   <TouchableOpacity
+    //     onPress={() => {
+    //       navigation.navigate('Main', {
+    //         screen: 'PointsList',
+    //         params: {
+    //           id: item.meridianID,
+    //           header: item.english,
+    //         },
+    //       })
+    //     }}>
+    //     <ListItem.Content>
+    //       <ListItem.Title>{item.english}</ListItem.Title>
+    //       <ListItem.Subtitle>{item.english}</ListItem.Subtitle>
+    //     </ListItem.Content>
+    //   </TouchableOpacity>
+    //   {/* <ListItem.Chevron /> */}
+    // </ListItem>
   )
 
   return (
