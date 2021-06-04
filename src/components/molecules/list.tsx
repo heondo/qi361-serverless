@@ -1,15 +1,11 @@
 import * as React from 'react'
 import {BaseProps} from '../../types/styled'
-import {ListItem, ListBadgeContainer, ListBadgeText} from '../atoms'
+import {ListBadgeContainer, ListBadgeText} from '../atoms'
 
-export const ListItemContainer = ({children}: BaseProps) => {
-  return <ListItem>{children}</ListItem>
-}
-
-export const ListBadge = ({text}: {text: string}) => {
+export const ListBadge = ({children}: {children: string}) => {
   return (
     <ListBadgeContainer>
-      <ListBadgeText>{text}</ListBadgeText>
+      <ListBadgeText>{children}</ListBadgeText>
     </ListBadgeContainer>
   )
 }

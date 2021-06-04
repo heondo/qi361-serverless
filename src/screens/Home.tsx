@@ -1,17 +1,18 @@
 import React from 'react'
-import {ListItem} from 'react-native-elements'
 import {StackNavigationProp} from '@react-navigation/stack'
 
 import {RootTabParamList} from '../types/navigation'
 import {
   FlatList,
+  ListItemButton,
+  ListItemContainer,
   ListItemText,
   Row,
   Text,
   ThemeContainer,
   TouchableOpacity,
 } from '../components/atoms'
-import {ListItemContainer, ListBadge} from '../components/molecules'
+import {ListBadge} from '../components/molecules'
 import GROUP_DATA, {MeridianDataType} from '../../static/data/groupData'
 
 type HomeScreenNavigationProp = StackNavigationProp<RootTabParamList, 'Main'>
@@ -28,7 +29,7 @@ export function Home({navigation}: Props) {
 
   const renderItem = ({item}: {item: MeridianDataType | any}) => (
     <ListItemContainer>
-      <TouchableOpacity
+      <ListItemButton
         onPress={() => {
           navigation.navigate('Main', {
             screen: 'PointsList',
@@ -41,12 +42,12 @@ export function Home({navigation}: Props) {
         }}>
         <Row justifyContent="space-between">
           <Row>
-            <ListBadge text={item.meridianID} />
+            <ListBadge>{item.meridianID}</ListBadge>
             <ListItemText>{item.english}</ListItemText>
           </Row>
           <Text>0/{item.points.length}</Text>
         </Row>
-      </TouchableOpacity>
+      </ListItemButton>
     </ListItemContainer>
   )
 

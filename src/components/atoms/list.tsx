@@ -2,6 +2,7 @@ import styled from 'styled-components/native'
 import colors from '../../constants/colors'
 import {ThemeType} from '../../constants/theme'
 import {BaseProps} from '../../types/styled'
+import {TouchableOpacity} from './button'
 import {View} from './container'
 
 export const FlatList = styled.FlatList`
@@ -10,13 +11,18 @@ export const FlatList = styled.FlatList`
   /* margin: auto; */
 `
 
-export const ListItem = styled(View)`
+export const ListItemButton = styled(TouchableOpacity)`
   padding: 12px;
-  margin: 8px 0px;
   width: auto;
-  border-radius: 8px;
-  background-color: ${colors.gray['800']};
 `
+
+export const ListItemContainer = styled(View)`
+  margin: 8px 0;
+  background-color: ${colors.gray['800']};
+  border-radius: 8px;
+`
+
+// `
 
 export const ListBadgeContainer = styled(View)`
   padding: 8px;
