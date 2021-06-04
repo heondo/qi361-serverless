@@ -2,7 +2,6 @@ import * as React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
 import {useColorScheme} from 'react-native-appearance'
 
-import {Detail} from '../screens/Detail'
 import {PointsList} from '../screens/PointsList'
 import {Home} from '../screens/Home'
 import {MainStackParamList} from '../types/navigation'
@@ -41,14 +40,6 @@ export function HomeStackNavigator() {
         component={PointsList}
         options={({route}) => ({
           title: `${route.params.id} - ${route.params.header}`,
-        })}
-      />
-
-      <Stack.Screen
-        name="Detail"
-        component={Detail}
-        options={({route}) => ({
-          title: route.name,
         })}
       />
     </Stack.Navigator>
