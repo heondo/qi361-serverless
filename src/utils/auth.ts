@@ -7,7 +7,7 @@ export const cleanUserObject = (user: any): User | null => {
     uid: user.uid,
     name: user.name,
     email: user.email,
-    photoUrl: user.photoUrl,
+    photoURL: user.photoURL,
     creationDate: user.metadata.creationTime,
   }
 }

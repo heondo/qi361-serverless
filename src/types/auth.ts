@@ -2,6 +2,6 @@ export type User = {
   uid: string
   name: string
   email: string
-  photoUrl: string
+  photoURL: string
   creationDate?: Date | number
 }

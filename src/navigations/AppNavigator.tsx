@@ -11,7 +11,7 @@ import colors from '../constants/colors'
 import {RootTabParamList} from '../types/navigation'
 
 import {useAppDispatch} from '../store/hooks'
-import {thunkLogin} from '../store/user/userSlice'
+import {thunkLogin, thunkLogout} from '../store/user/userSlice'
 import {cleanUserObject} from '../utils/auth'
 
 const Tab = createBottomTabNavigator<RootTabParamList>()
@@ -26,7 +26,9 @@ export function MainStackNavigator() {
   // Handle user state changes
   function onAuthStateChanged(u: any) {
     const payload = cleanUserObject(u)
-    dispatch(thunkLogin(payload))
+    if (payload) {
+      dispatch(thunkLogin(payload))
+    }
     // the user object is here, for now. I must just save.
     // setUser(u)
     // if (initializing) setInitializing(false)
