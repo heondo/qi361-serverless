@@ -35,7 +35,7 @@ export function DetailsSwiper({navigation, route}: Props) {
         showsPagination={false}
         index={initialIndex}>
         {meridianPoints.map(p => (
-          <LoggedOutDetails pointID={p} navigation={navigation} />
+          <LoggedOutDetails key={p} pointID={p} navigation={navigation} />
         ))}
       </Swiper>
     </ThemeContainer>

@@ -5,7 +5,6 @@ import {ThemeProvider as RneThemeProvider} from 'react-native-elements'
 import {themes, ThemeType} from '../../constants/theme'
 import {View} from './container'
 import {BaseProps} from '../../types/styled'
-import LinearGradient from 'react-native-linear-gradient'
 
 export const Row = styled(View)`
   display: flex;
@@ -21,19 +20,6 @@ export const Col = styled(View)`
   width: auto;
   justify-content: ${(props: BaseProps) =>
     props.justifyContent ? props.justifyContent : 'flex-start'};
-`
-
-export const LinearGradientContainer = styled(LinearGradient)`
-  padding: 8px;
-  width: 45px;
-  height: 45px;
-  margin: ${(props: BaseProps) =>
-    props.position === 'right' ? '0 0 0 14px' : '0 14px 0 0'};
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
 `
 
 export const ThemeContainer = ({children}: {children: React.ReactElement}) => {
