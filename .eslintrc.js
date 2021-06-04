@@ -4,6 +4,8 @@ module.exports = {
     'prettier',
     'prettier/react',
     'plugin:prettier/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
     'eslint-config-prettier',
   ],
   parser: 'babel-eslint',
@@ -23,6 +25,11 @@ module.exports = {
         printWidth: 100,
       },
     ],
+  },
+  settings: {
+    'import/resolver': {
+      'babel-module': {},
+    },
   },
   plugins: ['prettier'],
 }

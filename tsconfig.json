@@ -12,13 +12,19 @@
       "skipLibCheck": true,
       "declaration": true,
       "noUnusedLocals": true,
-      
+      "baseUrl": ".",
+      "paths": {
+        "@components/*": ["./src/components/*"],
+        "@api/*": ["./src/api/*"],
+        "@navigations/*": ["./src/navigations/*"],
+        "@screens/*": ["./src/screens/*"],
+        "@store/*": ["./src/store/*"],
+        "@types/*": ["./src/types/*"],
+        "@utils/*": ["./src/utils/*"],
+        "@constants/*": ["./src/constants/*"]
+      }  
     },
     "exclude": [
       "node_modules"
     ],
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["./src/"],
-    }
-  }
+}
