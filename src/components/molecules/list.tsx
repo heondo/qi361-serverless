@@ -5,7 +5,7 @@ import {ListItem} from '../atoms'
 export const ListItemContainer = ({
   children,
 }: {
-  children: React.ReactElement
+  children: React.ReactElement | React.ReactElement[]
 }) => {
   return <ListItem>{children}</ListItem>
 }

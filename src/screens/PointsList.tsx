@@ -1,7 +1,6 @@
 import {RouteProp} from '@react-navigation/core'
 import {StackNavigationProp} from '@react-navigation/stack'
 import React from 'react'
-import {ListItem} from 'react-native-elements'
 import {POINTS_DATA} from '../../static/data/pointData'
 
 import {
@@ -26,13 +25,17 @@ export function PointsList({route, navigation}: Props) {
   const keyExtractor = (item: any, index: number) => item
   const {points} = route.params
 
-  const renderItem = ({item}: {item: string}) => (
-    <TouchableOpacity>
-      <ListItemContainer>
-        <Text>{item}</Text>
-      </ListItemContainer>
-    </TouchableOpacity>
-  )
+  const renderItem = ({item}: {item: string | any}) => {
+    const point = POINTS_DATA[item]
+    return (
+      <TouchableOpacity>
+        <ListItemContainer>
+          <Text>{point.name}</Text>
+          <Text>{point.name}</Text>
+        </ListItemContainer>
+      </TouchableOpacity>
+    )
+  }
 
   return (
     <ThemeContainer>

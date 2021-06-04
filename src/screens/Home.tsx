@@ -24,7 +24,10 @@ type Props = {
 export function Home({navigation}: Props) {
   const keyExtractor = (item: any) => item.meridianID
 
-  const renderItem = ({item}: {item: MeridianDataType}) => (
+  // TODO: cannot figure out, why this fials.
+  // MeridianDataType is correct type but flatlist hates it
+
+  const renderItem = ({item}: {item: MeridianDataType | any}) => (
     <ListItemContainer>
       <TouchableOpacity
         onPress={() => {
@@ -40,24 +43,6 @@ export function Home({navigation}: Props) {
         <Text>{item.english}</Text>
       </TouchableOpacity>
     </ListItemContainer>
-    // <ListItem bottomDivider>
-    //   <TouchableOpacity
-    //     onPress={() => {
-    //       navigation.navigate('Main', {
-    //         screen: 'PointsList',
-    //         params: {
-    //           id: item.meridianID,
-    //           header: item.english,
-    //         },
-    //       })
-    //     }}>
-    //     <ListItem.Content>
-    //       <ListItem.Title>{item.english}</ListItem.Title>
-    //       <ListItem.Subtitle>{item.english}</ListItem.Subtitle>
-    //     </ListItem.Content>
-    //   </TouchableOpacity>
-    //   {/* <ListItem.Chevron /> */}
-    // </ListItem>
   )
 
   return (
