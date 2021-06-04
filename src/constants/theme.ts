@@ -15,7 +15,13 @@ const darkTheme = {
     bg: colors.blackAlpha['900'],
     primary: colors.gray['800'],
     secondary: colors.red['500'],
+    black: colors.black,
     white: colors.white,
+    searchBg: colors.gray['700'],
+    success: 'white',
+    error: 'white',
+    warning: 'white',
+    divider: 'white',
   },
   text: {
     primary: colors.white,

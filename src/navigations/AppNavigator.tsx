@@ -5,8 +5,10 @@ import {SafeAreaProvider} from 'react-native-safe-area-context'
 
 import {HomeStackNavigator} from './HomeStack'
 import {SettingsStackNavigator} from './SettingsStack'
-import {RootTabParamList} from '../types/navigation'
+// import {a} from 'react-native-vector-icons'
+
 import colors from '../constants/colors'
+import {RootTabParamList} from '../types/navigation'
 
 const Tab = createBottomTabNavigator<RootTabParamList>()
 
@@ -22,7 +24,14 @@ export function MainStackNavigator() {
               backgroundColor: colors.gray['800'],
             },
           }}>
-          <Tab.Screen name="Main" component={HomeStackNavigator} />
+          <Tab.Screen
+            name="Main"
+            component={HomeStackNavigator}
+            options={{
+              // tabBarIcon:
+              title: 'Home',
+            }}
+          />
           <Tab.Screen name="Settings" component={SettingsStackNavigator} />
         </Tab.Navigator>
       </NavigationContainer>

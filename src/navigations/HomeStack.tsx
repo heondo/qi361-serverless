@@ -32,7 +32,7 @@ export function HomeStackNavigator() {
         name="Home"
         component={Home}
         options={({route}) => ({
-          title: route.name,
+          title: 'Meridians',
         })}
       />
       <Stack.Screen
