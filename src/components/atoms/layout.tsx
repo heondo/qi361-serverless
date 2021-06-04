@@ -10,7 +10,6 @@ export const Row = styled(View)`
   display: flex;
   flex-direction: row;
   /* flex: 1; */
-  width: auto;
   align-items: center;
   justify-content: ${(props: BaseProps) =>
     props.justifyContent ? props.justifyContent : 'flex-start'};
