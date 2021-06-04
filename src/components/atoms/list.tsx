@@ -1,7 +1,8 @@
 import styled from 'styled-components/native'
+import {ThemeType} from '../../constants/theme'
 
 export const FlatList = styled.FlatList`
-  background-color: ${props => props.theme.colors.bg};
+  background-color: ${(props: {theme: ThemeType}) => props.theme.colors.bg};
 `
 
 export const ListItem = styled.View`
@@ -9,5 +10,6 @@ export const ListItem = styled.View`
   margin: 6px 8px;
   width: auto;
   border-radius: 8px;
-  background-color: ${props => props.theme.colors.primary};
+  background-color: ${(props: {theme: ThemeType}) =>
+    props.theme.colors.primary};
 `

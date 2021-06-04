@@ -1,5 +1,6 @@
 import styled from 'styled-components/native'
+import {ThemeType} from '../../constants/theme'
 
 export const Text = styled.Text`
-  color: ${props => props.theme.text.primary};
+  color: ${(props: {theme: ThemeType}) => props.theme.text.primary};
 `

@@ -2,13 +2,14 @@ import * as React from 'react'
 import styled, {ThemeProvider} from 'styled-components/native'
 import {ThemeProvider as RneThemeProvider} from 'react-native-elements'
 // import {useColorScheme} from 'react-native-appearance'
-import {themes} from '../../constants/theme'
+import {themes, ThemeType} from '../../constants/theme'
 
 export const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: ${props => props.theme.colors.primary};
+  background-color: ${(props: {theme: ThemeType}) =>
+    props.theme.colors.primary};
 `
 
 export const ThemeContainer = ({children}: {children: React.ReactElement}) => {
