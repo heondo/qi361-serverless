@@ -19,7 +19,7 @@ export const ScreenContainer = styled(Container)`
   background-color: ${(props: BaseProps) => props.theme.colors.primary};
 `
 
-export const SettingsContainer = styled(Col)`
+export const SettingsContainer = styled(View)`
   height: 100%;
   width: 100%;
   padding: 8px 12px;
