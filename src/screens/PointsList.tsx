@@ -5,11 +5,13 @@ import {POINTS_DATA} from '../../static/data/pointData'
 
 import {
   FlatList,
+  ListItemText,
+  Row,
   Text,
   ThemeContainer,
   TouchableOpacity,
 } from '../components/atoms'
-import {ListItemContainer} from '../components/molecules'
+import {ListBadge, ListItemContainer} from '../components/molecules'
 import {MainStackParamList, RootTabParamList} from '../types/navigation'
 
 type PointsScreenNavigationProp = StackNavigationProp<RootTabParamList, 'Main'>
@@ -28,12 +30,16 @@ export function PointsList({route, navigation}: Props) {
   const renderItem = ({item}: {item: string | any}) => {
     const point = POINTS_DATA[item]
     return (
-      <TouchableOpacity>
-        <ListItemContainer>
-          <Text>{point.name}</Text>
-          <Text>{point.name}</Text>
-        </ListItemContainer>
-      </TouchableOpacity>
+      <ListItemContainer>
+        <TouchableOpacity onPress={() => {}}>
+          <Row justifyContent="space-between">
+            <Row>
+              <ListBadge text={item.split('-')[1]} />
+              <ListItemText>{point.english}</ListItemText>
+            </Row>
+          </Row>
+        </TouchableOpacity>
+      </ListItemContainer>
     )
   }
 
