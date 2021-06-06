@@ -13,6 +13,8 @@ const darkTheme = {
   colors: {
     bg: colors.blackAlpha['900'],
     primary: colors.gray['800'],
+    gray: colors.gray['600'],
+    lightgray: colors.gray['400'],
     secondary: colors.red['500'],
     black: colors.black,
     white: colors.white,

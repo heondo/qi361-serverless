@@ -19,10 +19,10 @@ export function ProfileBanner({user}: Props) {
           />
           <View>
             <Row>
-              <Text>Thank you for using Qi 361, </Text>
+              <Text fontSize="16px">Thank you for using Qi 361, </Text>
               <Capitalized>{user.displayName}</Capitalized>
             </Row>
-            <Text>Signed in via {user.authProvider}</Text>
+            <Text fontSize="12px">Signed in via {user.authProvider}</Text>
           </View>
         </Row>
       </>

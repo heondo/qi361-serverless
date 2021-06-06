@@ -97,10 +97,29 @@ export const thunkLogin = (user: User) => async (dispatch: AppDispatch) => {
 
 export const thunkLogout = () => async (dispatch: AppDispatch) => {
   try {
+    dispatch(setAuthError(null))
+    dispatch(
+      setAuthLoading({
+        status: true,
+        message: 'logging out',
+      }),
+    )
     await signout()
     dispatch(logout())
     // dispatch(setImagesNull())
+    dispatch(
+      setAuthLoading({
+        status: false,
+      }),
+    )
   } catch (err) {
+    dispatch(setAuthError(err.message))
     console.error(err)
+  } finally {
+    dispatch(
+      setAuthLoading({
+        status: false,
+      }),
+    )
   }
 }

@@ -1,16 +1,8 @@
 import React from 'react'
 import {StackNavigationProp} from '@react-navigation/stack'
 
-import {
-  Col,
-  EmptySpace,
-  MenuContainer,
-  Text,
-  ThemeContainer,
-  Row,
-  Icon,
-} from '@atoms'
-import {ListRowType, ListSection} from '@molecules'
+import {Col, EmptySpace, MenuContainer, Text, ThemeContainer} from '@atoms'
+import {ListRowType, ListSection, LogoutButton} from '@molecules'
 import {SignInOptions, ProfileBanner} from '@organisms'
 import {RootTabParamList} from '@types'
 import {useAppSelector} from '@store'
@@ -48,6 +40,13 @@ export function Menu({navigation}: Props) {
       },
       icon: 'lock',
     },
+    {
+      name: 'View in app store',
+      action: () => {
+        console.log('do something, probably navigate to a different place')
+      },
+      icon: 'appstore-o',
+    },
   ]
 
   return (
@@ -60,7 +59,11 @@ export function Menu({navigation}: Props) {
         </Col>
         <EmptySpace />
 
-        <Text>This is where I could show the logout</Text>
+        {user ? (
+          <LogoutButton />
+        ) : (
+          <Text>This is where I could show the logout</Text>
+        )}
       </MenuContainer>
     </ThemeContainer>
   )
