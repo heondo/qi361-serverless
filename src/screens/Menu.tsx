@@ -10,7 +10,7 @@ import {
   Row,
   Icon,
 } from '@atoms'
-import {ListSection} from '@molecules'
+import {ListRowType, ListSection} from '@molecules'
 import {SignInOptions, ProfileBanner} from '@organisms'
 import {RootTabParamList} from '@types'
 import {useAppSelector} from '@store'
@@ -26,20 +26,27 @@ export function Menu({navigation}: Props) {
 
   const topSection = user ? <ProfileBanner user={user} /> : <SignInOptions />
 
-  const aboutList = [
+  const aboutList: ListRowType[] = [
     {
-      name: 'option 1',
+      name: 'FAQ',
       action: () => {
         console.log('do something, probably navigate')
       },
-      icon: 'home',
+      icon: 'question',
     },
     {
-      name: 'option 2',
+      name: 'Need Help?',
       action: () => {
         console.log('do something, probably navigate to a different place')
       },
-      icon: 'setting',
+      icon: 'flag',
+    },
+    {
+      name: 'Privacy Policy',
+      action: () => {
+        console.log('do something, probably navigate to a different place')
+      },
+      icon: 'lock',
     },
   ]
 

@@ -12,7 +12,7 @@ import {
 } from '@atoms'
 import {colors} from '@constants'
 
-type ListRowType = {
+export type ListRowType = {
   icon: string
   action: (event: GestureResponderEvent) => void
   name: string
