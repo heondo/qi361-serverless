@@ -12,5 +12,5 @@ export const UserAvatar = styled(Image)`
   height: 50px;
   width: 50px;
   border-radius: 8px;
-  margin-right: 12px;
+  margin-right: 20px;
 `

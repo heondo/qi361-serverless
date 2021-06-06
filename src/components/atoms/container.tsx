@@ -8,6 +8,13 @@ export const View = styled.View`
   margin: ${(props: BaseProps) => (props.mg ? props.mg : '0')};
 `
 
+export const ScrollView = styled.ScrollView`
+  width: ${(props: BaseProps) => (props.w ? props.w : 'auto')};
+  height: ${(props: BaseProps) => (props.h ? props.h : 'auto')};
+  padding: ${(props: BaseProps) => (props.pd ? props.pd : '0')};
+  margin: ${(props: BaseProps) => (props.mg ? props.mg : '0')};
+`
+
 export const Container = styled(View)`
   flex: 1;
   justify-content: center;

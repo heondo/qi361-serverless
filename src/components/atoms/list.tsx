@@ -21,8 +21,6 @@ export const ListItemContainer = styled(View)`
   border-radius: 8px;
 `
 
-// `
-
 export const ListBadgeContainer = styled(View)`
   padding: 8px;
   width: 45px;

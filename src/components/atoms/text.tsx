@@ -6,6 +6,17 @@ export const Text = styled.Text`
   color: ${(props: BaseProps) => props.theme.text.primary};
   font-size: ${(props: BaseProps) =>
     props.fontSize ? props.fontSize : '14px'};
+  width: ${(props: BaseProps) => (props.w ? props.w : 'auto')};
+  height: ${(props: BaseProps) => (props.h ? props.h : 'auto')};
+  padding: ${(props: BaseProps) => (props.pd ? props.pd : '0')};
+  margin: ${(props: BaseProps) => (props.mg ? props.mg : '0')};
+`
+
+export const ListHeader = styled(Text)`
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  font-weight: bold;
 `
 
 export const Capitalized = styled(Text)`

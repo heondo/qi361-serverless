@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import {NavigationContainer} from '@react-navigation/native'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {SafeAreaProvider} from 'react-native-safe-area-context'
-import Icon from 'react-native-vector-icons/AntDesign'
 import {HomeStackNavigator} from './HomeStack'
 import {MenuStackNavigator} from './MenuStack'
 import auth from '@react-native-firebase/auth'
@@ -12,6 +11,7 @@ import {RootTabParamList} from '@types'
 import {cleanUserObject} from '@utils'
 
 import {useAppDispatch, thunkLogin} from '@store'
+import {Icon} from '@atoms'
 
 const Tab = createBottomTabNavigator<RootTabParamList>()
 
