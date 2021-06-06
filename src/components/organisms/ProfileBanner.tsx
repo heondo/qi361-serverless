@@ -10,7 +10,7 @@ export function ProfileBanner({user}: Props) {
   return (
     <ThemeContainer>
       <>
-        <Row w="100%" pd="16px">
+        <Row w="100%" pd="16px" mg="0 0 6px 0">
           {/* <View>{user.photoURL}</View> */}
           <UserAvatar
             source={{

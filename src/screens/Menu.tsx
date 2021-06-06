@@ -1,4 +1,5 @@
 import React from 'react'
+import {Linking} from 'react-native'
 import {StackNavigationProp} from '@react-navigation/stack'
 
 import {Col, EmptySpace, MenuContainer, Text, ThemeContainer} from '@atoms'
@@ -28,23 +29,19 @@ export function Menu({navigation}: Props) {
     },
     {
       name: 'Need Help?',
-      action: () => {
-        console.log('do something, probably navigate to a different place')
-      },
+      action: async () =>
+        await Linking.openURL('mailto:heondokim@gmail.com?subject=Qi361 Help'),
       icon: 'flag',
     },
     {
       name: 'Privacy Policy',
-      action: () => {
-        console.log('do something, probably navigate to a different place')
-      },
+      action: async () => await Linking.openURL('https://www.heondokim.com'),
       icon: 'lock',
     },
     {
       name: 'View in app store',
-      action: () => {
-        console.log('do something, probably navigate to a different place')
-      },
+      action: async () =>
+        await Linking.openURL('market://details?id=com.ecwid.android'),
       icon: 'appstore-o',
     },
   ]
