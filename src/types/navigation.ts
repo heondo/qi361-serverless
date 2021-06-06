@@ -1,9 +1,8 @@
 import {NavigatorScreenParams} from '@react-navigation/native'
-import {PointType} from './meridians'
 
 export type RootTabParamList = {
   Main: NavigatorScreenParams<MainStackParamList>
-  Settings: NavigatorScreenParams<SettingsStackParamList>
+  Menu: NavigatorScreenParams<MenuStackParamList>
 }
 
 export type MainStackParamList = {
@@ -15,6 +14,6 @@ export type MainStackParamList = {
   }
 }
 
-export type SettingsStackParamList = {
-  Settings: undefined
+export type MenuStackParamList = {
+  Menu: undefined
 }

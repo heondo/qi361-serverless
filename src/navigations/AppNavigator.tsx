@@ -4,7 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {SafeAreaProvider} from 'react-native-safe-area-context'
 import Icon from 'react-native-vector-icons/AntDesign'
 import {HomeStackNavigator} from './HomeStack'
-import {SettingsStackNavigator} from './SettingsStack'
+import {MenuStackNavigator} from './MenuStack'
 import auth from '@react-native-firebase/auth'
 
 import {colors} from '@constants'
@@ -60,8 +60,8 @@ export function MainStackNavigator() {
             }}
           />
           <Tab.Screen
-            name="Settings"
-            component={SettingsStackNavigator}
+            name="Menu"
+            component={MenuStackNavigator}
             options={{
               tabBarIcon: ({focused}) => {
                 return (
@@ -72,7 +72,7 @@ export function MainStackNavigator() {
                   />
                 )
               },
-              title: 'Settings',
+              title: 'Menu',
             }}
           />
         </Tab.Navigator>

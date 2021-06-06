@@ -1,4 +1,4 @@
 export * from './DetailSwiper'
 export * from './Home'
 export * from './PointsList'
-export * from './Settings'
+export * from './Menu'

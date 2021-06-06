@@ -1,6 +1,6 @@
 export type User = {
   uid: string
-  name: string
+  displayName: string
   email: string
   photoURL: string
   authProvider: string

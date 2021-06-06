@@ -2,8 +2,8 @@ import React from 'react'
 import {ThemeType} from '@constants'
 
 export interface BaseProps {
-  width?: string
-  height?: string
+  w?: string
+  h?: string
   mg?: string
   pd?: string
   justifyContent?: string
@@ -11,4 +11,5 @@ export interface BaseProps {
   position?: 'left' | 'right'
   theme: ThemeType
   children?: React.ReactElement | React.ReactElement[]
+  // add string if text element causing issues
 }

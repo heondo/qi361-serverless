@@ -5,6 +5,10 @@ export const Text = styled.Text`
   color: ${(props: {theme: ThemeType}) => props.theme.text.primary};
 `
 
+export const Capitalized = styled(Text)`
+  text-transform: capitalize;
+`
+
 export const ListItemText = styled(Text)`
   font-size: 18px;
 `

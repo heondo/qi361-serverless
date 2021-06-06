@@ -4,7 +4,7 @@ export const cleanUserObject = (user: any): User | null => {
   if (!user) return null
   return {
     uid: user.uid,
-    name: user.name,
+    displayName: user.displayName,
     email: user.email,
     photoURL: user.photoURL,
     authProvider: user.providerData[0].providerId,
