@@ -10,10 +10,10 @@ import {
   Row,
   Icon,
 } from '@atoms'
+import {ListSection} from '@molecules'
 import {SignInOptions, ProfileBanner} from '@organisms'
 import {RootTabParamList} from '@types'
 import {useAppSelector} from '@store'
-import {ListSection} from '@molecules'
 
 type MenuScreenNavigationProp = StackNavigationProp<RootTabParamList, 'Main'>
 
@@ -26,27 +26,30 @@ export function Menu({navigation}: Props) {
 
   const topSection = user ? <ProfileBanner user={user} /> : <SignInOptions />
 
+  const aboutList = [
+    {
+      name: 'option 1',
+      action: () => {
+        console.log('do something, probably navigate')
+      },
+      icon: 'home',
+    },
+    {
+      name: 'option 2',
+      action: () => {
+        console.log('do something, probably navigate to a different place')
+      },
+      icon: 'setting',
+    },
+  ]
+
   return (
     <ThemeContainer>
       <MenuContainer>
         <Col>
           {/* Signed in or out options */}
           {topSection}
-          <ListSection header="ABOUT">
-            <Row>
-              <Icon
-                name="home"
-                color="white"
-                size={16}
-                pd="4px"
-                mg="0 6px 0 0"
-              />
-              <Text>Option 1</Text>
-            </Row>
-            {/* <Text pd="6px">Option 1</Text>
-            <Text pd="6px">Option 2</Text>
-            <Text pd="6px">Option 3</Text> */}
-          </ListSection>
+          <ListSection header="ABOUT" data={aboutList} />
         </Col>
         <EmptySpace />
 
