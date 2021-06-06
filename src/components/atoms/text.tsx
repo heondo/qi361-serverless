@@ -1,8 +1,11 @@
 import styled from 'styled-components/native'
-import {ThemeType, colors} from '@constants'
+import {colors} from '@constants'
+import {BaseProps} from '@types'
 
 export const Text = styled.Text`
-  color: ${(props: {theme: ThemeType}) => props.theme.text.primary};
+  color: ${(props: BaseProps) => props.theme.text.primary};
+  font-size: ${(props: BaseProps) =>
+    props.fontSize ? props.fontSize : '14px'};
 `
 
 export const Capitalized = styled(Text)`

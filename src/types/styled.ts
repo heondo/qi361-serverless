@@ -6,10 +6,11 @@ export interface BaseProps {
   h?: string
   mg?: string
   pd?: string
+  fontSize?: string
   justifyContent?: string
   alignItems?: string
   position?: 'left' | 'right'
   theme: ThemeType
-  children?: React.ReactElement | React.ReactElement[]
+  children?: React.ReactElement | React.ReactElement[] | string | string[]
   // add string if text element causing issues
 }

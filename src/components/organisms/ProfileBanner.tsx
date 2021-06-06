@@ -18,16 +18,12 @@ export function ProfileBanner({user}: Props) {
             }}
           />
           <View>
-            <Text>
-              Thank you for using Qi 361,{' '}
+            <Row>
+              <Text>Thank you for using Qi 361, </Text>
               <Capitalized>{user.displayName}</Capitalized>
-            </Text>
-            <Text>Signed in via: {user.authProvider}</Text>
+            </Row>
+            <Text>Signed in via {user.authProvider}</Text>
           </View>
-        </Row>
-        <Row w="100%" justifyContent="space-between">
-          <Text>profile banner made</Text>
-          {/* <Text>profile banner made</Text> */}
         </Row>
       </>
     </ThemeContainer>
