@@ -41,6 +41,8 @@ export function MainStackNavigator() {
             activeTintColor: colors.red['400'],
             style: {
               backgroundColor: colors.gray['800'],
+              paddingBottom: 2,
+              paddingTop: 2,
             },
           }}>
           <Tab.Screen
