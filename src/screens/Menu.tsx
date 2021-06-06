@@ -23,6 +23,7 @@ export function Menu({navigation}: Props) {
           {user ? <ProfileBanner user={user} /> : <SignInOptions />}
         </Col>
         <EmptySpace />
+        <Text>This is where I could show the logout</Text>
         <Text>{JSON.stringify(user)}</Text>
       </MenuContainer>
     </ThemeContainer>
