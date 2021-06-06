@@ -3,7 +3,8 @@ import {colors} from '@constants'
 import {BaseProps} from '@types'
 
 export const Text = styled.Text`
-  color: ${(props: BaseProps) => props.theme.text.primary};
+  color: ${(props: BaseProps) =>
+    props.color ? props.color : props.theme.text.primary};
   font-size: ${(props: BaseProps) =>
     props.fontSize ? props.fontSize : '14px'};
   width: ${(props: BaseProps) => (props.w ? props.w : 'auto')};

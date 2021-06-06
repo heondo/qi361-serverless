@@ -1,6 +1,7 @@
 import React from 'react'
 
 import {Icon, ListHeader, Row, Text, View} from '@atoms'
+import {colors} from '@constants'
 
 type ListRowType = {
   icon: string
@@ -21,15 +22,25 @@ export function ListSection({header, data}: Props) {
       <ListHeader>{header}</ListHeader>
       <View>
         {data.map(lrt => (
-          <Row key={lrt.name + lrt.icon}>
-            <Icon
-              name={lrt.icon}
-              color="white"
-              size={16}
-              pd="4px"
-              mg="0 6px 0 0"
-            />
-            <Text>{lrt.name}</Text>
+          <Row
+            key={lrt.name + lrt.icon}
+            pd="8px 0px"
+            mg="4px 0"
+            justifyContent="space-between">
+            <Row>
+              <Icon
+                name={lrt.icon}
+                color={colors.gray['300']}
+                size={16}
+                mg="0 16px 0 0"
+              />
+              <Text color={colors.gray['300']} fontSize="13px">
+                {lrt.name}
+              </Text>
+            </Row>
+            <View>
+              <Icon name="right" size={12} color={colors.gray['300']} />
+            </View>
           </Row>
         ))}
       </View>
