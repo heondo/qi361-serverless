@@ -8,7 +8,8 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "tslint -p \".\" -t stylish",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "clean-android": "cd android/ && ./gradlew clean && cd .. && rm -r node_modules && yarn"
   },
   "lint-staged": {
     "*.{js,jsx}": [
