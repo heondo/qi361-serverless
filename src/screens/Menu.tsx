@@ -16,7 +16,7 @@ type Props = {
 export function Menu({navigation}: Props) {
   const user = useAppSelector(state => state.auth.user)
 
-  const topSection = user ? <ProfileBanner user={user} /> : <SignInOptions />
+  const topSection = user ? <ProfileBanner user={user} /> : null
 
   const aboutList: ListRowType[] = [
     {
@@ -58,12 +58,7 @@ export function Menu({navigation}: Props) {
           <ListSection header="ABOUT" data={aboutList} />
         </Col>
         <EmptySpace />
-
-        {user ? (
-          <LogoutButton />
-        ) : (
-          <Text>This is where I could show the logout</Text>
-        )}
+        {user ? <LogoutButton /> : <SignInOptions />}
       </MenuContainer>
     </ThemeContainer>
   )

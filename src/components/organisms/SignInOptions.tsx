@@ -1,15 +1,17 @@
 import React from 'react'
-import {TouchableOpacity} from 'react-native-gesture-handler'
-import {onGoogleButtonPress} from '@api'
 
-import {Text, ThemeContainer} from '@atoms'
+import {onGoogleButtonPress} from '@api'
+import {FadedText, Icon, OutlinedButton, Row, ThemeContainer} from '@atoms'
 
 export function SignInOptions() {
   return (
     <ThemeContainer>
-      <TouchableOpacity onPress={onGoogleButtonPress}>
-        <Text>SignIn</Text>
-      </TouchableOpacity>
+      <OutlinedButton onPress={onGoogleButtonPress}>
+        <Row w="100%" justifyContent="center">
+          <Icon name="google" size={16} mg="0 6px 0 0" />
+          <FadedText>LOGIN</FadedText>
+        </Row>
+      </OutlinedButton>
     </ThemeContainer>
   )
 }

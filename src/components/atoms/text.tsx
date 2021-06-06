@@ -33,3 +33,11 @@ export const ListBadgeText = styled(Text)`
   font-size: 14px;
   font-weight: bold;
 `
+
+export const FadedText = styled(Text)`
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  color: ${props => props.theme.colors.lightgray};
+`

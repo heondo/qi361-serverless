@@ -15,11 +15,7 @@ interface Props extends IconProps {
 }
 
 export const Icon = function (props: Props) {
-  return (
-    <ThemeContainer>
-      <Component {...props} />
-    </ThemeContainer>
-  )
+  return <Component {...props} color={props.color ? props.color : 'white'} />
 }
 
 const Component = styled(RNVI)`

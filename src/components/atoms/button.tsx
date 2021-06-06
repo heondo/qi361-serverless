@@ -10,3 +10,9 @@ export const TouchableOpacity = styled.TouchableOpacity`
   margin: ${(props: BaseProps) => (props.mg ? props.mg : '0')};
   color: black;
 `
+
+export const OutlinedButton = styled(TouchableOpacity)`
+  padding: 12px;
+  border: 1px solid ${props => props.theme.colors.lightgray};
+  border-radius: 6px;
+`
