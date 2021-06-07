@@ -32,7 +32,6 @@ export const TutorialSwiper = ({handleClose}: Props) => {
         showsPagination={true}
         onIndexChanged={index => setCurrentIndex(index)}
         index={currentIndex}>
-        {/* <FirstIntroScreen /> */}
         <ScreenContainer>
           <Text>uno</Text>
         </ScreenContainer>
