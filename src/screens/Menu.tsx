@@ -7,6 +7,7 @@ import {ListRowType, ListSection, LogoutButton} from '@molecules'
 import {SignInOptions, ProfileBanner} from '@organisms'
 import {RootTabParamList} from '@types'
 import {useAppSelector} from '@store'
+import {LoadingOverlay} from 'src/components/molecules/LoadingOverlay'
 
 type MenuScreenNavigationProp = StackNavigationProp<RootTabParamList, 'Main'>
 
@@ -15,7 +16,7 @@ type Props = {
 }
 
 export function Menu({navigation}: Props) {
-  const user = useAppSelector(state => state.auth.user)
+  const {user, isLoading, loadingMessage} = useAppSelector(state => state.auth)
 
   const topSection = user ? <ProfileBanner user={user} /> : null
 
@@ -48,6 +49,7 @@ export function Menu({navigation}: Props) {
 
   return (
     <ThemeContainer>
+      {isLoading ? <LoadingOverlay message={loadingMessage} /> : null}
       <MenuContainer>
         <Col>
           {/* Signed in or out options */}

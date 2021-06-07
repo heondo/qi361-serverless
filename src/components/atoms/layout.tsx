@@ -3,7 +3,7 @@ import styled, {ThemeProvider} from 'styled-components/native'
 import {ThemeProvider as RneThemeProvider} from 'react-native-elements'
 
 import {View} from './container'
-import {themes, ThemeType} from '@constants'
+import {themes} from '@constants'
 import {BaseProps} from '@types'
 
 export const Row = styled(View)`
@@ -31,7 +31,9 @@ export const EmptySpace = styled(View)`
 export const ThemeContainer = ({
   children,
 }: {
-  children: React.ReactElement | React.ReactElement[]
+  children:
+    | (React.ReactElement | string | null)[]
+    | (React.ReactElement | string | null)
 }) => {
   // let colorScheme = useColorScheme()
   // TODO: Permanently dark, light theme after one color set up done.
