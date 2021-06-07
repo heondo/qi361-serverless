@@ -6,6 +6,7 @@ export interface BaseProps {
   h?: string
   mg?: string
   pd?: string
+  pos?: string
   color?: string
   fontSize?: string
   justifyContent?: string

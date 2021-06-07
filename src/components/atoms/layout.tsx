@@ -28,7 +28,11 @@ export const EmptySpace = styled(View)`
   flex: 1;
 `
 
-export const ThemeContainer = ({children}: {children: React.ReactElement}) => {
+export const ThemeContainer = ({
+  children,
+}: {
+  children: React.ReactElement | React.ReactElement[]
+}) => {
   // let colorScheme = useColorScheme()
   // TODO: Permanently dark, light theme after one color set up done.
   // Replace with above to start testing with light  mode setup

@@ -22,7 +22,7 @@ export function ProfileBanner({user}: Props) {
               <Text fontSize="16px">Thank you for using Qi 361, </Text>
               <Capitalized>{user.displayName}</Capitalized>
             </Row>
-            <Text fontSize="12px">Signed in via {user.authProvider}</Text>
+            <Text fontSize="13px">Signed in via {user.authProvider}</Text>
           </View>
         </Row>
       </>

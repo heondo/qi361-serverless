@@ -44,7 +44,7 @@ export function ListSection({header, data}: Props) {
                     size={16}
                     mg="0 16px 0 0"
                   />
-                  <Text color={colors.gray['300']} fontSize="13px">
+                  <Text color={colors.gray['300']} fontSize="14px">
                     {lrt.name}
                   </Text>
                 </Row>
