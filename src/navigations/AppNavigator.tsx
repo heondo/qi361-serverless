@@ -12,6 +12,8 @@ import {cleanUserObject} from '@utils'
 
 import {useAppDispatch, thunkLogin} from '@store'
 import {Icon} from '@atoms'
+import {TutorialSwiper} from '@screens'
+import {useFirstLaunch} from '@hooks'
 
 const Tab = createBottomTabNavigator<RootTabParamList>()
 
@@ -32,6 +34,12 @@ export function MainStackNavigator() {
     return subscriber // unsubscribe on unmount
   }, [])
   // firebase auth lifecycle hook - end
+
+  const {isFirstLaunch, setHasLaunched} = useFirstLaunch()
+
+  if (isFirstLaunch) {
+    return <TutorialSwiper handleClose={setHasLaunched} />
+  }
 
   return (
     <SafeAreaProvider>
