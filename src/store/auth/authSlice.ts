@@ -5,7 +5,7 @@ import {User} from '@types'
 
 export interface UserState {
   isLoading: boolean
-  loadingMessage: string
+  loadingMessage: string | null
   error: string | null
   user: null | User // TODO create user type
 }
@@ -13,7 +13,7 @@ export interface UserState {
 // Define the initial state using that type
 const initialState: UserState = {
   isLoading: false,
-  loadingMessage: '',
+  loadingMessage: null,
   error: null,
   user: null,
 }
