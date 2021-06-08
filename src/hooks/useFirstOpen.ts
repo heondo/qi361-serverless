@@ -2,16 +2,17 @@ import AsyncStorage from '@react-native-community/async-storage'
 import {useEffect, useState} from 'react'
 
 export function useFirstLaunch() {
-  const [isFirstLaunch, setIsFirstLaunch] = useState(true)
+  const [isFirstLaunch, setIsFirstLaunch] = useState(false)
 
   useEffect(() => {
-    const check = async () => {
+    // check storage, if first time no value found and set isFirstLaunch to true
+    const checkFirst = async () => {
       const hasLaunched = await AsyncStorage.getItem('hasLaunched')
-      if (hasLaunched) {
-        setIsFirstLaunch(false)
+      if (!hasLaunched) {
+        setIsFirstLaunch(true)
       }
     }
-    check()
+    checkFirst()
   }, [])
 
   const setHasLaunched = () => {
