@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, {ThemeProvider} from 'styled-components/native'
-import {ThemeProvider as RneThemeProvider} from 'react-native-elements'
+// import {ThemeProvider as RneThemeProvider} from 'react-native-elements'
 
 import {View} from './container'
 import {themes} from '@constants'
@@ -41,11 +41,11 @@ export const ThemeContainer = ({
   const colorScheme = 'dark'
   return (
     <ThemeProvider theme={themes[colorScheme]}>
-      <RneThemeProvider
+      {/* <RneThemeProvider
         useDark={colorScheme === 'dark'}
-        theme={themes[colorScheme]}>
-        {children}
-      </RneThemeProvider>
+        theme={themes[colorScheme]}> */}
+      {children}
+      {/* </RneThemeProvider> */}
     </ThemeProvider>
   )
 }
