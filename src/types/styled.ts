@@ -12,8 +12,6 @@ export interface BaseProps {
   alignItems?: string
   position?: 'left' | 'right'
   theme: ThemeType
-  children?:
-    | (React.ReactElement | string | null)[]
-    | (React.ReactElement | string | null)
+  children?: React.ReactNode
   // add string if text element causing issues
 }
